@@ -4,6 +4,6 @@ class Trip < ApplicationRecord
   belongs_to :instructor, :class_name => 'User'
   belongs_to :student, :class_name => 'User'
 
-  validates :num_students, presence: true, numericality: { only_integer: true }
-  validates :status, default: 0
+  # validates :num_students, presence: true, numericality: { only_integer: true }
+  # validates :status, default: 0
 end
