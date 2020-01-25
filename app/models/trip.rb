@@ -5,5 +5,4 @@ class Trip < ApplicationRecord
   belongs_to :student, :class_name => 'User'
 
   validates :num_students, presence: true
-  # validates :status, default: 0
 end
