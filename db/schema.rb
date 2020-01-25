@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_25_124713) do
+ActiveRecord::Schema.define(version: 2020_01_25_124936) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,18 @@ ActiveRecord::Schema.define(version: 2020_01_25_124713) do
     t.index ["user_id"], name: "index_photos_on_user_id"
   end
 
+
+  create_table "reviews", force: :cascade do |t|
+    t.bigint "instructor_id"
+    t.bigint "student_id"
+    t.text "description"
+    t.integer "rating"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["instructor_id"], name: "index_reviews_on_instructor_id"
+    t.index ["student_id"], name: "index_reviews_on_student_id"
+  end
+  
   create_table "sessions", force: :cascade do |t|
     t.datetime "start"
     t.datetime "end"
@@ -71,6 +83,10 @@ ActiveRecord::Schema.define(version: 2020_01_25_124713) do
   end
 
   add_foreign_key "photos", "users"
+
+  add_foreign_key "reviews", "users", column: "instructor_id"
+  add_foreign_key "reviews", "users", column: "student_id"
+
   add_foreign_key "sessions", "trips"
   add_foreign_key "trips", "users", column: "instructor_id"
   add_foreign_key "trips", "users", column: "student_id"
