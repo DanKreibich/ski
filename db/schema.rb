@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_25_122641) do
+ActiveRecord::Schema.define(version: 2020_01_25_124713) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,7 +23,15 @@ ActiveRecord::Schema.define(version: 2020_01_25_122641) do
     t.index ["user_id"], name: "index_photos_on_user_id"
   end
 
-  #if something is wrong with references, recheck references in Trip model
+  create_table "sessions", force: :cascade do |t|
+    t.datetime "start"
+    t.datetime "end"
+    t.bigint "trip_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["trip_id"], name: "index_sessions_on_trip_id"
+  end
+
   create_table "trips", force: :cascade do |t|
     t.bigint "instructor_id"
     t.bigint "student_id"
@@ -63,6 +71,7 @@ ActiveRecord::Schema.define(version: 2020_01_25_122641) do
   end
 
   add_foreign_key "photos", "users"
+  add_foreign_key "sessions", "trips"
   add_foreign_key "trips", "users", column: "instructor_id"
   add_foreign_key "trips", "users", column: "student_id"
 end
