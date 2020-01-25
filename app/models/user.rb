@@ -9,4 +9,6 @@ class User < ApplicationRecord
 
   has_many :instructors, :class_name => 'Review', :foreign_key => 'instructor_id'
   has_many :students, :class_name => 'Review', :foreign_key => 'student_id'
+
+  validates :role, presence: true
 end
