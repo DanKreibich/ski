@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get 'trips/new'
   get 'users/index'
   get 'users/show'
+  get 'contact', to: 'pages#contact', as: :contact
   devise_for :users
   root to: 'pages#home'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
