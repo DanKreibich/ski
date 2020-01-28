@@ -10,10 +10,11 @@
 # Ignore all logfiles and tempfiles.
 /log/*
 /tmp/*
+/tmp/pids/*
+!/tmp/pids/.keep
 !/log/.keep
 !/tmp/.keep
-#the following file needed to be added manually for Heroku to work
-!/tmp/pids
+# the following file needed to be added manually for Heroku to work
 
 # Ignore uploaded files in development
 /storage/*
