@@ -11,14 +11,14 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
-        <li class="nav-item active">
-          <%= link_to "Start", root_path, class: "nav-link" %>
+        <li class="navigation-element">
+          <%= link_to "Start", root_path, class: "nav-element-link" %>
         </li>
-        <li class="nav-item active">
-          <%= link_to "Contact", contact_path, class: "nav-link" %>
+        <li class="navigation-element">
+          <%= link_to "Contact", contact_path, class: "nav-element-link" %>
         </li>
-        <li class="nav-item active">
-          <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link" %>
+        <li class="navigation-element">
+          <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-element-link" %>
         </li>
         <li class="nav-item dropdown">
           <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
@@ -28,17 +28,17 @@
           </div>
         </li>
       <% else %>
-        <li class="nav-item">
-          <%= link_to "Start", root_path, class: "nav-link" %>
+        <li class="navigation-element">
+          <%= link_to "Start", root_path, class: "nav-element-link" %>
         </li>
-        <li class="nav-item">
-          <%= link_to "Contact", contact_path, class: "nav-link" %>
+        <li class="navigation-element">
+          <%= link_to "Contact", contact_path, class: "nav-element-link" %>
         </li>
-        <li class="nav-item">
-          <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+        <li class="navigation-element">
+          <%= link_to "Login", new_user_session_path%>
         </li>
-        <li class="nav-item">
-          <%= link_to "Sign up", new_user_registration_path, class: "nav-link" %>
+        <li class="navigation-element">
+          <%= link_to "Sign up", new_user_registration_path, class: "nav-element-sign-up" %>
         </li>
       <% end %>
     </ul>
