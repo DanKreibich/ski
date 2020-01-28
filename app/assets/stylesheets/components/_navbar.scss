@@ -1,12 +1,33 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  // background: white;
 }
-
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
 }
-
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+.navbar {
+  padding: 0;
+}
+.navigation-element {
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: $white;
+  text-transform: uppercase;
+  padding-right: 35px;
+  font-size: 20px;
+}
+.nav-element-link {
+  color: $white;
+}
+.nav-element-link:hover {
+  color: $white;
+  padding-bottom: 5px;
+  border-bottom: 2px solid $white;
+}
+.nav-element-sign-up {
+  text-transform: capitalize;
+  color: $white;
+}
+.nav-element-sign-up:hover {
+  color: $white;
 }

@@ -1,0 +1,22 @@
+body {
+  font-family: forma-djr-display, sans-serif;
+  font-style: normal;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+.logo {
+  font-weight: 700;
+  font-size: 50px;
+  color: $white;
+  text-transform: lowercase;
+  padding-left: 40px;
+}
+a:hover {
+  text-decoration: none;
+}
+.blue-btn {
+  padding: 10px 40px;
+  background-color: $blue;
+}

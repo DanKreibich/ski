@@ -11,14 +11,16 @@
 
 <div style="display: flex; flex-wrap: wrap;">
   <% @instructors.each do |instructor| %>
-    <div style="display: flex; flex-direction: column;">
-      <%= image_tag ("#{instructor.avatar}"), height: "150px;", width: "150px;" %>
+    <%= link_to user_path(instructor) do %>
       <div style="display: flex; flex-direction: column;">
-        <p><%= instructor.first_name %></p>
-        <p><%= instructor.resort %></p>
-        <p><%= instructor.hourly_rate %></p>
+        <%= image_tag ("#{instructor.avatar}"), height: "150px;", width: "150px;" %>
+        <div style="display: flex; flex-direction: column;">
+          <p><%= instructor.first_name %></p>
+          <p><%= instructor.resort %></p>
+          <p><%= instructor.hourly_rate %></p>
+        </div>
       </div>
-    </div>
+    <% end %>
   <% end %>
 
 </div>

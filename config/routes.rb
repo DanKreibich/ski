@@ -6,7 +6,9 @@ Rails.application.routes.draw do
   get 'reviews/update'
   get 'reviews/destroy'
   get 'trips/new'
-  resources :users, only: [:index, :show]
+  get 'users/index'
+  get 'users/show'
+  # resources :users, only: [:index, :show]
   get 'contact', to: 'pages#contact', as: :contact
   devise_for :users
   root to: 'pages#home'
