@@ -1,6 +1,10 @@
 class UsersController < ApplicationController
   def index
-    raise
+    if params[:query].present?
+      # Add correct db search or add gem
+    else
+      @instructors = User.all
+    end
   end
 
   def show
