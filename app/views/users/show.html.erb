@@ -1,2 +1,16 @@
-<h1>Users#show</h1>
+<h1><%= @instructor.first_name %> <%= @instructor.last_name %></h1>
 <p>Find me in app/views/users/show.html.erb</p>
+
+<%= link_to "Back", users_path, method: :get %> <br><br>
+
+<%= image_tag ("#{@instructor.avatar}"), height: "150px;", width: "150px;" %>
+<p>Gender: <%= @instructor.gender%></p>
+<p>Phone: <%= @instructor.phone %></p>
+<p>Description: <%= @instructor.description %></p>
+<p>Minimum booking hours: <%= @instructor.min_booking_hours %></p>
+<p>Level: <%= @instructor.level %></p>
+<p>Price/hour: <%= @instructor.hourly_rate %></p>
+<p>Price/day: <%= @instructor.day_rate %></p>
+<p>Resort: <%= @instructor.resort %></p>
+<p>Max students: <%= @instructor.max_num_students %></p>
+<p>Birth date: <%= @instructor.birth_date %></p>

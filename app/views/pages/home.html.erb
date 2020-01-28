@@ -1,3 +1,9 @@
-<h1>push worked</h1>
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+
+<h1>find the best ski instructor</h1>
+
+<%= form_tag users_path, method: :get do%>
+  <%= text_field_tag :query, placeholder: "Find a movie" %>
+  <%= date_field_tag :start_date, placeholde: "Choose your start dates" %>
+  <%= date_field_tag :end_date, placeholde: "Choose your end dates" %>
+  <%= submit_tag "Search"%>
+<% end %>
