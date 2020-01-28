@@ -6,10 +6,11 @@ Rails.application.routes.draw do
   get 'reviews/update'
   get 'reviews/destroy'
   get 'trips/new'
-
+  get 'users/index'
+  get 'users/show'
+  # resources :users, only: [:index, :show]
   get 'contact', to: 'pages#contact', as: :contact
   devise_for :users
-  resources  :users, only: [:index, :show]
   root to: 'pages#home'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
