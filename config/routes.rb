@@ -5,7 +5,6 @@ Rails.application.routes.draw do
   get 'reviews/edit'
   get 'reviews/update'
   get 'reviews/destroy'
-
   resources  :trips, only: [:new, :create]
 
   get 'contact', to: 'pages#contact', as: :contact
