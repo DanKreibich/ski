@@ -46,5 +46,8 @@
   flex-wrap: wrap;
   width: 1500px;
   margin: 0 auto;
-  justify-content: space-around;
+  // justify-content: space-around;
+}
+.instructor-card:nth-child(4n+4) {
+  margin: 0 0 80px 0;
 }
