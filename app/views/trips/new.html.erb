@@ -1,2 +1,38 @@
 <h1>Trips#new</h1>
 <p>Find me in app/views/trips/new.html.erb</p>
+
+<!-- Open: Generate table with max 7 days per page given: a starting date, an end date  -->
+<!-- Open: Display different color and make selectable vs. non selectable for each box -->
+<!-- Open: Array called Sessions of Start/End datetimes -->
+<!-- Open: Make sure unselect deletes session from Session array -->
+<!-- Open: Dynamic price changes -->
+
+
+<div class="container" style="display: flex">
+
+<% def generate_table(date_range) %>
+  <% date_range = (date_range.begin.to_date .. date_range.end.to_date) %>
+  <% date_range.each do |date| %>
+    <div style="padding-right: 25px;"> <p> <%=date%> </p>
+      <!-- Loop over timeslots of 1 hour -->
+      <!-- Check if match for (date + timeslot) in Session table "2020-01-31 10:00:00".to_datetime -->
+      <!-- If false, make clickable and lovely, if true make horrible and not selectable-->
+      <div class="box" id='<%= date %> 9:00:00'>x</div>
+      <div class="box" id='<%= date %> 10:00:00'>x</div>
+      <div class="box" id='<%= date %> 11:00:00'>x</div>
+      <div class="box" id='<%= date %> 12:00:00'>x</div>
+      <div class="box" id='<%= date %> 13:00:00'>x</div>
+      <div class="box" id='<%= date %> 14:00:00'>x</div>
+      <div class="box" id='<%= date %> 15:00:00'>x</div>
+      <div class="box" id='<%= date %> 16:00:00'>x</div>
+      <div class="box" id='<%= date %> 17:00:00'>x</div>
+    </div>
+  <% end %>
+<% end %>
+
+<% generate_table(7.days.ago .. 0.days.ago) %>
+
+
+<!-- Open: create Continue button to create the trip -->
+
+
