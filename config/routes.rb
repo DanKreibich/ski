@@ -5,7 +5,8 @@ Rails.application.routes.draw do
   get 'reviews/edit'
   get 'reviews/update'
   get 'reviews/destroy'
-  get 'trips/new'
+
+  resources  :trips, only: [:new, :create]
 
   get 'contact', to: 'pages#contact', as: :contact
   devise_for :users
