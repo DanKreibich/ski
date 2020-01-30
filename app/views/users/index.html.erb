@@ -3,29 +3,30 @@
     <%= render 'shared/search' %>
     <div class="sorting-container">
       <div class="gender-sorting">
-        <p>Any</p>
-        <p>Male</p>
-        <p>Female</p>
+        <p class="selector">Any</p>
+        <p class="selector">Male</p>
+        <p class="selector">Female</p>
       </div>
       <div class="price-sorting">
         <p>its gona be a price sorting here</p>
       </div>
       <div class="rating-sorting">
-        <p>1</p>
-        <p>2</p>
-        <p>3</p>
-        <p>4</p>
-        <p>5</p>
+        <p class="selector">1</p>
+        <p class="selector">2</p>
+        <p class="selector">3</p>
+        <p class="selector">4</p>
+        <p class="selector">5</p>
       </div>
   </div>
   </div>
 </div>
 
-<div style="display: flex; flex-wrap: wrap;">
+<div class="show-cards-wrapper">
+  <div class="show-cards-container">
     <% @instructors.each do |instructor| %>
       <%= link_to user_path(instructor) do %>
-        <div style="display: flex; flex-direction: column;">
-          <%= image_tag ("#{instructor.avatar}"), height: "150px;", width: "150px;" %>
+        <div class="instructor-card">
+          <%= image_tag ("#{instructor.avatar}")%>
           <div style="display: flex; flex-direction: column;">
             <p><%= instructor.first_name %></p>
             <p><%= instructor.resort %></p>
@@ -35,3 +36,4 @@
       <% end %>
     <% end %>
   </div>
+</div>
