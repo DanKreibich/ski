@@ -52,6 +52,7 @@ a:hover {
   flex-direction: column;
   box-shadow: 0px 0px 20px $shadow;
   border-radius: 30px;
+  margin: 0 80px 80px 0;
   img {
     height: 300px;
     width: 300px;
@@ -61,3 +62,37 @@ a:hover {
 .instructor-card:hover {
   box-shadow: 0px 0px 50px $shadow;
 }
+.instructor-info {
+  display: flex;
+  color: black;
+}
+.instructor-info {
+  padding: 18px;
+  display: flex;
+  justify-content: space-between;
+}
+.name-and-price {
+  font-size: 30px;
+  margin: 0;
+}
+.resort-and-price {
+  font-size: 15px;
+  margin: 0;
+}
+.rating {
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+  margin: 0;
+  color: $blue;
+  img {
+    width: 14px;
+    height: 15px;
+  }
+}
+.instructor-info-price {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
