@@ -22,8 +22,15 @@ a:hover {
   background-color: $blue;
   box-shadow: 0px 0px 20px $shadow;
   border-radius: 20px;
+  border: none;
 }
-
 .box {
   background-color: $blue;
+}
+.input_form {
+  padding: 10px 40px;
+  background-color: $white;
+  box-shadow: 0px 0px 20px $shadow;
+  border-radius: 20px;
+  border: none;
 }
