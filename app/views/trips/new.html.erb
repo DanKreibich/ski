@@ -17,7 +17,37 @@
     </div>
   </div>
 </div>
+<div class="booking-table-wrapper">
+  <div class="booking-table-container">
+    <div class="booking-table">
+      <div class="hour-block">
+        <p>09:00-10:00</p>
+        <p>10:00-11:00</p>
+        <p>11:00-12:00</p>
+        <p>12:00-13:00</p>
+        <p>13:00-14:00</p>
+        <p>14:00-15:00</p>
+        <p>15:00-16:00</p>
+      </div>
 
+      <% 7.times do%>
+        <div class="booking-date-day">
+          <div class="booking-date">
+            <p class="date">05</p>
+            <p class="day-of-week">Wednesday</p>
+          </div>
+          <div class="booking-slot"></div>
+          <div class="booking-slot"></div>
+          <div class="booking-slot"></div>
+          <div class="booking-slot"></div>
+          <div class="booking-slot"></div>
+          <div class="booking-slot"></div>
+          <div class="booking-slot"></div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
 <!-- Open: Generate table with max 7 days per page given: a starting date, an end date  -->
 <!-- Open: Display different color and make selectable vs. non selectable for each box -->
 <!-- Open: Array called Sessions of Start/End datetimes -->
