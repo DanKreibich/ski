@@ -1,27 +1,20 @@
-<h1>Users#index</h1>
-
-
-<%= form_tag users_path, method: :get do%>
-  <%= text_field_tag :query, placeholder: :test %>
-  <%= date_field_tag :start_date, placeholde: "Choose your start dates" %>
-  <%= date_field_tag :end_date, placeholde: "Choose your end dates" %>
-  <%= submit_tag "Search"%>
-<% end %>
-
-
-<div style="display: flex; flex-wrap: wrap;">
-  <% @instructors.each do |instructor| %>
-    <%= link_to user_path(instructor) do %>
-      <div style="display: flex; flex-direction: column;">
-        <%= image_tag ("#{instructor.avatar}"), height: "150px;", width: "150px;" %>
-        <div style="display: flex; flex-direction: column;">
-          <p><%= instructor.first_name %></p>
-          <p><%= instructor.resort %></p>
-          <p><%= instructor.hourly_rate %></p>
-        </div>
-      </div>
-    <% end %>
-  <% end %>
-
+<div class="search-wrapper">
+  <div class="search-container">
+    <%= render 'shared/search' %>
+  </div>
 </div>
 
+<div style="display: flex; flex-wrap: wrap;">
+    <% @instructors.each do |instructor| %>
+      <%= link_to user_path(instructor) do %>
+        <div style="display: flex; flex-direction: column;">
+          <%= image_tag ("#{instructor.avatar}"), height: "150px;", width: "150px;" %>
+          <div style="display: flex; flex-direction: column;">
+            <p><%= instructor.first_name %></p>
+            <p><%= instructor.resort %></p>
+            <p><%= instructor.hourly_rate %></p>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
