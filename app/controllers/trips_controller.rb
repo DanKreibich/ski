@@ -8,10 +8,10 @@ class TripsController < ApplicationController
   private
 
   def instructor_sessions(instructor)
-    @trips = Trip.where(instructor_id: "#{instructor.id}")
+    @trips = Trip.where(instructor_id: instructor.id)
     @sessions = []
     @trips.each do |trip|
-      @sessions << Session.where(trip_id: "#{trip.id}")
+      @sessions << Session.where(trip_id: trip.id)
     end
     @sessions
   end

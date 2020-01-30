@@ -17,7 +17,16 @@
     </div>
   </div>
 </div>
-<%= @sessions %>
+<%= @sessions %> <br>
+<%= date = @sessions[0][0].start %>
+<%= date.day %> <br>
+<%= date.month %> <br>
+<%= date.hour %> <br>
+<%= date.year %> <br>
+<%= date.min %> <br>
+<%= date %> <br>
+<br>
+
 <div class="booking-table-wrapper">
   <div class="booking-table-container">
     <div class="booking-table">
@@ -34,16 +43,44 @@
       <% 7.times do%>
         <div class="booking-date-day">
           <div class="booking-date">
-            <p class="date">05</p>
-            <p class="day-of-week">Wednesday</p>
+            <p class="date"><%= date.day %></p>
+            <p class="day-of-week"><%= date.strftime('%A') %></p>
           </div>
-          <div class="booking-slot"></div>
-          <div class="booking-slot"></div>
-          <div class="booking-slot"></div>
-          <div class="booking-slot"></div>
-          <div class="booking-slot"></div>
-          <div class="booking-slot"></div>
-          <div class="booking-slot"></div>
+          <% if date.hour == 9 %>
+            <div class="booking-slot booked" id="booked" data-set-hour="9"></div>
+          <% else %>
+            <div class="booking-slot" data-set-hour="9"></div>
+          <% end %>
+          <% if date.hour == 10 %>
+            <div class="booking-slot booked" id="booked" data-set-hour="10"></div>
+          <% else %>
+            <div class="booking-slot" data-set-hour="10"></div>
+          <% end %>
+          <% if date.hour == 11 %>
+            <div class="booking-slot booked" id="booked" data-set-hour="11"></div>
+          <% else %>
+            <div class="booking-slot" data-set-hour="11"></div>
+          <% end %>
+          <% if date.hour == 12 %>
+            <div class="booking-slot booked" id="booked" data-set-hour="12"></div>
+          <% else %>
+            <div class="booking-slot" data-set-hour="12"></div>
+          <% end %>
+          <% if date.hour == 13 %>
+            <div class="booking-slot booked" id="booked" data-set-hour="13"></div>
+          <% else %>
+            <div class="booking-slot" data-set-hour="13"></div>
+          <% end %>
+          <% if date.hour == 14 %>
+            <div class="booking-slot booked" data-set-hour="14"></div>
+          <% else %>
+            <div class="booking-slot" data-set-hour="14"></div>
+          <% end %>
+          <% if date.hour == 15 %>
+            <div class="booking-slot booked"  data-set-hour="15"></div>
+          <% else %>
+            <div class="booking-slot" data-set-hour="15"></div>
+          <% end %>
         </div>
       <% end %>
     </div>

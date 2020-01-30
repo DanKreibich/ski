@@ -22,7 +22,7 @@ a:hover {
 .blue-btn {
   padding: 10px 40px;
   background-color: $blue;
-  box-shadow: 0px 0px 20px $shadow;
+  box-shadow: 0px 0px 20px $shadow-color;
   border-radius: 20px;
   border: none;
 }
@@ -32,14 +32,14 @@ a:hover {
 .input_form {
   padding: 10px 40px;
   background-color: $white;
-  box-shadow: 0px 0px 20px $shadow;
+  box-shadow: 0px 0px 20px $shadow-color;
   border-radius: 20px;
   border: none;
 }
 .white-btn {
   padding: 10px 40px;
   background-color: $white;
-  box-shadow: 0px 0px 20px $shadow;
+  box-shadow: 0px 0px 20px $shadow-color;
   border-radius: 20px;
   border: none;
   color: $blue;
@@ -50,7 +50,7 @@ a:hover {
 .instructor-card {
   display: flex;
   flex-direction: column;
-  box-shadow: 0px 0px 20px $shadow;
+  box-shadow: 0px 0px 20px $shadow-color;
   border-radius: 30px;
   margin: 0 80px 80px 0;
   img {
@@ -60,7 +60,7 @@ a:hover {
   }
 }
 .instructor-card:hover {
-  box-shadow: 0px 0px 50px $shadow;
+  box-shadow: 0px 0px 50px $shadow-color;
 }
 .instructor-info {
   display: flex;
