@@ -7,10 +7,18 @@
   background-position: center;
 }
 .my-container {
-  width: 1200px;
+  width: 1500px;
   margin: 0 auto;
 
   display: flex;
   align-items: center;
   flex-direction: column;
+}
+.home-h1 {
+  font-size: 100px;
+  letter-spacing: 0;
+  color: #FFFFFF;
+  text-transform: lowercase;
+
+  padding-top: 170px;
 }
