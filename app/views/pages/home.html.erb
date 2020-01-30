@@ -4,14 +4,14 @@
 
     <h1 class="test">find the best ski instructor</h1>
 
-      <%= form_tag users_index_path, method: :get do%>
+      <%= form_tag users_path, method: :get do%>
         <%= text_field_tag :query, placeholder: :test %>
         <%= date_field_tag :start_date, placeholde: "Choose your start dates" %>
         <%= date_field_tag :end_date, placeholde: "Choose your end dates" %>
         <%= submit_tag "Search"%>
       <% end %>
 
-    <%= link_to "All instructors", users_index_path %>
+    <%= link_to "All instructors", users_path %>
   </div>
 </div>
 
