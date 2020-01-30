@@ -23,12 +23,26 @@ class TripsController < ApplicationController
     # note should be passed in params
     note = "Llorem ipsum Llorem ipsum Llorem ipsum Llorem ipsum"
 
-    # check for each sessions
-      # if start-datetime is available
-      # else refuse Trip and session and show error message to user
-    earliest_session = sessions_array.min
-    latest_session = sessions_array.max
-    @sessions = Session.where(start > earliest_session AND start < latest_session )
+    # do a check if all sessions are still available
+    instructor = User.find(params[:user_id])
+    trips = Trip.where(instructor_id: instructor.id)
+
+    booked_sessions = []
+    sessions_starts = []
+
+    trips.each do
+      booked_sessions << Session.where(trip_id: trip.id) # includes all sessions of a trip
+      booked_sessions.each do |session|
+        sessions_starts << session.start
+      end
+    end
+
+    sessions_array.each do |start|
+      sessions_starts << start
+    end
+
+    if sessions_start
+
 
 
     # If all sessions are available
@@ -51,4 +65,5 @@ class TripsController < ApplicationController
     @sessions
 
   end
+
 end
