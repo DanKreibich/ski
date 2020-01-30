@@ -1,0 +1,114 @@
+.user-booking-info {
+  width: 1000px;
+  margin: 0 auto;
+  padding: 60px 0;
+
+  display: flex;
+  justify-content: space-between;
+}
+.booking-photo-name {
+  display: flex;
+  align-items: center;
+}
+.booking-instructor-photo{
+  box-shadow: 0px 0px 20px shadow;
+  border-radius: 50px;
+
+  height: 87px;
+  width: 87px;
+
+  background-position: cover;
+}
+.booking-instructor-block {
+  padding-left: 20px;
+}
+.booking-instructor-name {
+  font-size: 50px;
+  margin: 0;
+}
+.booking-instructor-resort {
+  font-size: 30px;
+  margin: 0;
+  margin-top: -15px;
+}
+.booking-price {
+  display: flex;
+  flex-direction: column;
+  // justify-content: flex-end;
+  align-items: flex-end;
+}
+.booking-total-price {
+  font-size: 50px;
+  margin: 0;
+}
+.multiply-price-block {
+  display: flex;
+}
+.multiply-price-block {
+  font-size: 30px;
+  margin: 0;
+  margin-top: -15px;
+}
+.booking-table-wrapper {
+  width: 100%;
+  height: 100%;
+
+  padding-top: 55px;
+}
+.booking-table-container {
+  width: 1000px;
+  margin: 0 auto;
+
+  display: flex;
+  justify-content: center;
+}
+.booking-table {
+  margin-bottom: 60px;
+  padding: 32px;
+  display: flex;
+
+  box-shadow: 0px 0px 20px $shadow-color;
+  border-radius: 20px;
+}
+.hour-block {
+  padding-top: 43px;
+  color: $blue;
+  p {
+    padding: 28px 30px 0 0;
+    font-size: 15px;
+    margin: 0;
+  }
+}
+.booking-date {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.date {
+  font-size: 20px;
+  margin: 0;
+  color: $blue;
+}
+.day-of-week {
+  font-size: 15px;
+  color: #000AFF;
+
+  margin: 0;
+  padding-bottom: 10px;
+}
+.booking-slot {
+  height: 40px;
+  width: 80px;
+  border-radius: 10px;
+  background-color: $blue;
+  opacity: 0.3;
+  margin-bottom: 10px
+}
+.booking-slot:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+.booked {
+  opacity: 1;
+  cursor: default;
+}

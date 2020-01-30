@@ -1,5 +1,8 @@
 class TripsController < ApplicationController
   def new
+    @trip = Trip.new
+    @instructor = User.find(params[:user_id])
+    @sessions = instructor_sessions(@instructor)
   end
 
   def create
@@ -36,5 +39,16 @@ class TripsController < ApplicationController
       session = Session.new(start: start_datetime, end: start_datetime + (1 / 24.0)) #last brackets add 1 hour to start_datetime
       session.save
     end
+
+  private
+
+  def instructor_sessions(instructor)
+    @trips = Trip.where(instructor_id: instructor.id)
+    @sessions = []
+    @trips.each do |trip|
+      @sessions << Session.where(trip_id: trip.id)
+    end
+    @sessions
+
   end
 end

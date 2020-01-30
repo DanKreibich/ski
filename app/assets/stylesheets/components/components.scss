@@ -1,4 +1,6 @@
-body {
+.white-btn {
+
+}body {
   font-family: forma-djr-display, sans-serif;
   font-style: normal;
 }
@@ -12,6 +14,7 @@ body {
   color: $white;
   text-transform: lowercase;
   padding-left: 40px;
+  margin: 0;
 }
 a:hover {
   text-decoration: none;
@@ -19,6 +22,77 @@ a:hover {
 .blue-btn {
   padding: 10px 40px;
   background-color: $blue;
-  box-shadow: 0px 0px 20px $shadow;
+  box-shadow: 0px 0px 20px $shadow-color;
   border-radius: 20px;
+  border: none;
 }
+.box {
+  background-color: $blue;
+}
+.input_form {
+  padding: 10px 40px;
+  background-color: $white;
+  box-shadow: 0px 0px 20px $shadow-color;
+  border-radius: 20px;
+  border: none;
+}
+.white-btn {
+  padding: 10px 40px;
+  background-color: $white;
+  box-shadow: 0px 0px 20px $shadow-color;
+  border-radius: 20px;
+  border: none;
+  color: $blue;
+}
+.white-btn:hover {
+  color: $blue;
+}
+.instructor-card {
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 0px 20px $shadow-color;
+  border-radius: 30px;
+  margin: 0 80px 80px 0;
+  img {
+    height: 300px;
+    width: 300px;
+    border-radius: 30px 30px 0px 0px;
+  }
+}
+.instructor-card:hover {
+  box-shadow: 0px 0px 50px $shadow-color;
+}
+.instructor-info {
+  display: flex;
+  color: black;
+}
+.instructor-info {
+  padding: 18px;
+  display: flex;
+  justify-content: space-between;
+}
+.name-and-price {
+  font-size: 30px;
+  margin: 0;
+}
+.resort-and-price {
+  font-size: 15px;
+  margin: 0;
+}
+.rating {
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+  margin: 0;
+  color: $blue;
+  img {
+    width: 14px;
+    height: 15px;
+  }
+}
+.instructor-info-price {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+

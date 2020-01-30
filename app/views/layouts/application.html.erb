@@ -10,10 +10,13 @@
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
   </head>
   <body>
-    <% unless request.fullpath == "/" %>
-      <%= render 'shared/navbar' %>
+    <% if request.fullpath == "/" %>
+      <!-- the navbar is rendered in file home.html.erb -->
+    <% else %>
+      <%= render 'shared/navbar_index' %>
     <% end %>
-    <p class="notice"><%= notice %></p>
+    <!-- This p tag with calss notice is creating a 15px gap between divs (do we need it?) -->
+    <!-- <p class="notice"><%= notice %></p> -->
     <p class="alert"><%= alert %></p>
     <%= yield %>
     <%= javascript_include_tag 'application' %>

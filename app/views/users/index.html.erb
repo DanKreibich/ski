@@ -1,27 +1,46 @@
-<h1>Users#index</h1>
-
-
-<%= form_tag users_path, method: :get do%>
-  <%= text_field_tag :query, placeholder: :test %>
-  <%= date_field_tag :start_date, placeholde: "Choose your start dates" %>
-  <%= date_field_tag :end_date, placeholde: "Choose your end dates" %>
-  <%= submit_tag "Search"%>
-<% end %>
-
-
-<div style="display: flex; flex-wrap: wrap;">
-  <% @instructors.each do |instructor| %>
-    <%= link_to user_path(instructor) do %>
-      <div style="display: flex; flex-direction: column;">
-        <%= image_tag ("#{instructor.avatar}"), height: "150px;", width: "150px;" %>
-        <div style="display: flex; flex-direction: column;">
-          <p><%= instructor.first_name %></p>
-          <p><%= instructor.resort %></p>
-          <p><%= instructor.hourly_rate %></p>
-        </div>
+<div class="wrapper">
+  <div class="search-container">
+    <%= render 'shared/search' %>
+    <div class="sorting-container">
+      <div class="gender-sorting">
+        <p class="selector">Any</p>
+        <p class="selector">Male</p>
+        <p class="selector">Female</p>
       </div>
-    <% end %>
-  <% end %>
-
+      <div class="price-sorting">
+        <p>its gona be a price sorting here</p>
+      </div>
+      <div class="rating-sorting">
+        <p class="selector">1</p>
+        <p class="selector">2</p>
+        <p class="selector">3</p>
+        <p class="selector">4</p>
+        <p class="selector">5</p>
+      </div>
+  </div>
+  </div>
 </div>
 
+<div class="show-cards-wrapper">
+  <div class="show-cards-container">
+    <% @instructors.each do |instructor| %>
+      <div class="instructor-card">
+        <%= link_to user_path(instructor) do %>
+          <%= image_tag ("#{instructor.avatar}")%>
+          <div class="instructor-info">
+            <div class="instructor-info-name">
+              <p class="name-and-price"><%= instructor.first_name %></p>
+              <p class="resort-and-price"><%= instructor.resort %></p>
+              <!-- to think how to show reiting in here(just a example text right now) -->
+              <p class="rating"><%= image_tag("rating.svg") %> 4.4</p>
+            </div>
+            <div class="instructor-info-price">
+              <p class="name-and-price"> €<%= instructor.hourly_rate %></p>
+              <p class="resort-and-price">per hour</p>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>

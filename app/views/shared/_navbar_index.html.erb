@@ -1,0 +1,47 @@
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon blue-background">
+  <%= link_to root_path, class: "navbar-brand" do %>
+    <p class="logo">skicoach</p>
+  <% end %>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <% if user_signed_in? %>
+        <li class="navigation-element">
+          <%= link_to "Start", root_path, class: "nav-element-link" %>
+        </li>
+        <li class="navigation-element">
+          <%= link_to "Contact", contact_path, class: "nav-element-link" %>
+        </li>
+        <li class="navigation-element">
+          <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-element-link" %>
+        </li>
+        <li class="nav-item dropdown">
+          <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+            <%= link_to "Profile", "#", class: "dropdown-item" %>
+            <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+          </div>
+        </li>
+      <% else %>
+        <li class="navigation-element">
+          <%= link_to "Start", root_path, class: "nav-element-link" %>
+        </li>
+        <li class="navigation-element">
+          <%= link_to "Contact", contact_path, class: "nav-element-link" %>
+        </li>
+        <li class="navigation-element">
+          <%= link_to "Login", new_user_session_path , method: :get, class: "nav-element-link"%>
+        </li>
+        <li class="navigation-element">
+          <%= link_to "Sign up", new_user_registration_path, class: "nav-element-sign-up white-btn" %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
