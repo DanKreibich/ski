@@ -18,14 +18,10 @@
   </div>
 </div>
 <%= @sessions %> <br>
-<%= booking_column_date = @sessions[0][0].start %>
-<%= booking_column_date.day %> <br>
-<%= booking_column_date.month %> <br>
-<%= booking_column_date.hour %> <br>
-<%= booking_column_date.year %> <br>
-<%= booking_column_date.min %> <br>
-<%= booking_column_date %> <br>
-<br>
+<%=  @sessions[0] %> <br>
+<%=  @sessions[0][0]%> <br>
+<%= date = @sessions[0][0].start %>
+
 
 <div class="booking-table-wrapper">
   <div class="booking-table-container">
@@ -40,54 +36,26 @@
         <p>15:00-16:00</p>
       </div>
 
-
     <% counter = 0 %>
     <% while counter < 7 do %>
-      <% booking_column_booking_column_date = booking_column_date.today + counter %>
-      <div class="booking-booking_column_date-day">
-        <div class="booking-booking_column_date">
-          <p class="booking_column_date"><%= booking_column_booking_column_date.day %></p>
-          <p class="day-of-week"><%= booking_column_booking_column_date.strftime('%A') %></p>
+      <% booking_column_date = "2020-01-29 09:00:00".to_datetime + counter %>
+      <div class="booking-date-day">
+        <div class="booking-date">
+          <p class="date"><%= booking_column_date.day %></p>
+          <p class="day-of-week"><%= booking_column_date.strftime('%A') %></p>
         </div>
 
-        <% if booking_column_date.hour == 9 %>
-          <div class="booking-slot booked" id="booked" data-set-timeslot="9"></div>
-        <% else %>
-          <div class="booking-slot" data-set-timeslot="9"></div>
-        <% end %>
-        <% if booking_column_date.hour == 10 %>
-          <div class="booking-slot booked" id="booked" data-set-timeslot="10"></div>
-        <% else %>
-          <div class="booking-slot" data-set-timeslot="10"></div>
-        <% end %>
-        <% if booking_column_date.hour == 11 %>
-          <div class="booking-slot booked" id="booked" data-set-timeslot="11"></div>
-        <% else %>
-          <div class="booking-slot" data-set-timeslot="11"></div>
-        <% end %>
-        <% if booking_column_date.hour == 12 %>
-          <div class="booking-slot booked" id="booked" data-set-timeslot="12"></div>
-        <% else %>
-          <div class="booking-slot" data-set-timeslot="12"></div>
-        <% end %>
-        <% if booking_column_date.hour == 13 %>
-          <div class="booking-slot booked" id="booked" data-set-timeslot="13"></div>
-        <% else %>
-          <div class="booking-slot" data-set-timeslot="13"></div>
-        <% end %>
-        <% if booking_column_date.hour == 14 %>
-          <div class="booking-slot booked" data-set-timeslot="14"></div>
-        <% else %>
-          <div class="booking-slot" data-set-timeslot="14"></div>
-        <% end %>
-        <% if booking_column_date.hour == 15 %>
-          <div class="booking-slot booked"  data-set-timeslot="15"></div>
-        <% else %>
-          <div class="booking-slot" data-set-timeslot="15"></div>
-        <% end %>
-      </div>
+        <% for i in 0..6 %>
+        <% @sessions[0].each do |session|%>
+        <%= session.start %>
 
-
+          <% if booking_column_date + i.hour == session.start %>
+            <div class="booking-slot booked" id="booked" data-set-timeslot="<%= booking_column_date + i.hour %>"></div>
+          <% else %>
+            <div class="booking-slot" id="open" data-set-timeslot="<%= booking_column_date + i.hour %>"></div>
+          <% end %>
+        <% end %>
+      <% end %>
 
       <% counter += 1 %>
     <% end %>
@@ -101,29 +69,7 @@
 <!-- Open: Dynamic price changes -->
 
 
-<div class="container" style="display: flex">
 
-<% def generate_table(booking_column_date_range) %>
-  <% booking_column_date_range = (booking_column_date_range.begin.to_booking_column_date .. booking_column_date_range.end.to_booking_column_date) %>
-  <% booking_column_date_range.each do |booking_column_date| %>
-    <div style="padding-right: 25px;"> <p> <%=booking_column_date%> </p>
-      <!-- Loop over timeslots of 1 hour -->
-      <!-- Check if match for (booking_column_date + timeslot) in Session table "2020-01-31 10:00:00".to_booking_column_datetime -->
-      <!-- If false, make clickable and lovely, if true make horrible and not selectable-->
-      <div class="box" id='<%= booking_column_date %> 9:00:00'>x</div>
-      <div class="box" id='<%= booking_column_date %> 10:00:00'>x</div>
-      <div class="box" id='<%= booking_column_date %> 11:00:00'>x</div>
-      <div class="box" id='<%= booking_column_date %> 12:00:00'>x</div>
-      <div class="box" id='<%= booking_column_date %> 13:00:00'>x</div>
-      <div class="box" id='<%= booking_column_date %> 14:00:00'>x</div>
-      <div class="box" id='<%= booking_column_date %> 15:00:00'>x</div>
-      <div class="box" id='<%= booking_column_date %> 16:00:00'>x</div>
-      <div class="box" id='<%= booking_column_date %> 17:00:00'>x</div>
-    </div>
-  <% end %>
-<% end %>
-
-<% generate_table(7.days.ago .. 0.days.ago) %>
 
 
 <!-- Open: create Continue button to create the trip -->
