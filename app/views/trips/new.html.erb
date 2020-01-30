@@ -2,9 +2,9 @@
   <div class="user-booking-info">
     <div class="booking-photo-name">
       <%= image_tag ("#{@instructor.avatar}"), with: "25px;", height: "25px;", class: "booking-instructor-photo" %>
-      <div class="booking-instructor-name">
-        <p><%= @instructor.first_name %> <%= @instructor.last_name %></p>
-        <p><%= @instructor.resort %></p>
+      <div class="booking-instructor-block">
+        <p class="booking-instructor-name"><%= @instructor.first_name %> <%= @instructor.last_name %></p>
+        <p class="booking-instructor-resort"><%= @instructor.resort %></p>
       </div>
     </div>
     <div class="booking-price">

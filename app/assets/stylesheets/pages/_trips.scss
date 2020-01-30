@@ -1,4 +1,51 @@
 .user-booking-info {
   width: 1000px;
   margin: 0 auto;
+  padding: 60px 0;
+
+  display: flex;
+  justify-content: space-between;
+}
+.booking-photo-name {
+  display: flex;
+  align-items: center;
+}
+.booking-instructor-photo{
+  box-shadow: 0px 0px 20px shadow;
+  border-radius: 50px;
+
+  height: 87px;
+  width: 87px;
+
+  background-position: cover;
+}
+.booking-instructor-block {
+  padding-left: 20px;
+}
+.booking-instructor-name {
+  font-size: 50px;
+  margin: 0;
+}
+.booking-instructor-resort {
+  font-size: 30px;
+  margin: 0;
+  margin-top: -15px;
+}
+.booking-price {
+  display: flex;
+  flex-direction: column;
+  // justify-content: flex-end;
+  align-items: flex-end;
+}
+.booking-total-price {
+  font-size: 50px;
+  margin: 0;
+}
+.multiply-price-block {
+  display: flex;
+}
+.multiply-price-block {
+  font-size: 30px;
+  margin: 0;
+  margin-top: -15px;
 }
