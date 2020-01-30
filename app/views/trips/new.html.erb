@@ -1,3 +1,23 @@
+<div class="wrapper">
+  <div class="user-booking-info">
+    <div class="booking-photo-name">
+      <%= image_tag ("#{@instructor.avatar}"), with: "25px;", height: "25px;", class: "booking-instructor-photo" %>
+      <div class="booking-instructor-name">
+        <p><%= @instructor.first_name %> <%= @instructor.last_name %></p>
+        <p><%= @instructor.resort %></p>
+      </div>
+    </div>
+    <div class="booking-price">
+      <p class="booking-total-price">€1200</p>
+      <div class="multiply-price-block">
+        <p class="booking-num-sessions">12</p>
+        <p class="multiply">x</p>
+        <p class="booking-one-session-price">€50</p>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- Open: Generate table with max 7 days per page given: a starting date, an end date  -->
 <!-- Open: Display different color and make selectable vs. non selectable for each box -->
 <!-- Open: Array called Sessions of Start/End datetimes -->
