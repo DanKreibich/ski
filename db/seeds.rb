@@ -7,11 +7,12 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
 
-puts 'deleting all users, trips, sessions, reviews...'
+puts 'deleting all users, trips, sessions, reviews, images...'
 Session.delete_all
 Trip.delete_all
 Review.delete_all
 User.delete_all
+Photo.delete_all
 
 20.times do
   instructor = User.new
@@ -87,4 +88,19 @@ user_id = User.first.id
   user_id += 1
 end
 puts 'Created 3 review per instructor'
+
+user_id = User.first.id
+20.times do
+  i = rand(1..10)
+  i.times do
+    photo = Photo.new
+    photo.url = 'https://source.unsplash.com/1600x900/?ski'
+    photo.user_id = user_id
+    photo.save
+  end
+  user_id += 1
+end
+puts 'Created additional images for all users (not just instructors)'
+
+
 
