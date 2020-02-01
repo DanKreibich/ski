@@ -1,19 +1,45 @@
-<h1><%= @instructor.first_name %> <%= @instructor.last_name %></h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<div class="wrapper">
+  <div class ="instructor-head"> <!-- continue with _show_instructor.scss-->
+    <div class="name-block">
+    <%= image_tag ("#{@instructor.avatar}"), class: "avatar-large" %>
+      <div>
+        <h1><%= @instructor.first_name %> <%= @instructor.last_name %></h1>
+        <h3>Resort: <%= @instructor.resort %></h3>
+      </div>
+    </div>
+    <%= link_to "Continue", new_user_trip_path(@instructor), method: :get, class: "blue-btn" %>
+  </div>
+</div>
 
-<%= link_to "Back", users_path, method: :get %> <br><br>
+<div class="instructor-body">
+  <%= image_tag ("#{@instructor.avatar}"), class: "avatar-extra-large" %>
+  <h1><%= @instructor.first_name %> <%= @instructor.last_name %></h1>
+  <h3>Resort: <%= @instructor.resort %></h3>
+  <div class="instructor-description">
+    <p>Description: <%= @instructor.description %></p>
+  </div>
 
-<%= link_to "Book", new_user_trip_path(@instructor), method: :get %> <br><br>
+
+  <h1 class="blue-font">Reviews</h1>
+  <div class="review-container">
+    <!-- creates for each review a separate box -->
+    <% @reviews.each do |review|  %>
+      <div class="review-card">
+        <div class="review-info">
+          <p class="blue-font"><%= review.student.first_name %></p>
+          <p class="rating"><%= image_tag("rating.svg") %> <%= review.rating %></p>
+        </div>
+        <p><%=  review.description %></p>
+      </div>
+    <% end %>
+  </div>
 
 
-<%= image_tag ("#{@instructor.avatar}"), height: "150px;", width: "150px;" %>
-<p>Gender: <%= @instructor.gender%></p>
-<p>Phone: <%= @instructor.phone %></p>
-<p>Description: <%= @instructor.description %></p>
-<p>Minimum booking hours: <%= @instructor.min_booking_hours %></p>
-<p>Level: <%= @instructor.level %></p>
-<p>Price/hour: <%= @instructor.hourly_rate %></p>
-<p>Price/day: <%= @instructor.day_rate %></p>
-<p>Resort: <%= @instructor.resort %></p>
-<p>Max students: <%= @instructor.max_num_students %></p>
-<p>Birth date: <%= @instructor.birth_date %></p>
+  <h1 class="blue-font">Photos</h1>
+  <div class="photo-area">
+    <% @photos.each do |photo| %>
+      <%= image_tag ("#{photo.url}") %>
+    <% end %>
+  </div>
+
+</div>
