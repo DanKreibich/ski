@@ -51,6 +51,7 @@ class TripsController < ApplicationController
     else
       flash[:notice] = "Couldn't be saved as some slot had been booked by another user in the meantime. Please load page again."
     end
+  end
 
   private
 
