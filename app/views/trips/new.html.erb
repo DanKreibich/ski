@@ -55,11 +55,11 @@
                 <!-- Look up if the validations array contains at least one match. If yes, set class to booked -->
               <%= f.fields_for :sessions do |s| %>
                 <% if validation_array.include? true %>
-                  <div class="booking-slot booked" id="booked" data-set-timeslot="<%= booking_column_date + i.hour %>">
+                  <div class="booking-slot booked" data-set-timeslot="<%= booking_column_date + i.hour %>">
                     <% s.check_box :start %>
                   </div>
                 <% else %>
-                  <div class="booking-slot" id="open" data-set-timeslot="<%= booking_column_date + i.hour %>">
+                  <div class="booking-slot-open" data-set-timeslot="<%= booking_column_date + i.hour %>">
                     <% s.check_box :start %>
                   </div>
                 <% end %>
