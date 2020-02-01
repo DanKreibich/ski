@@ -1,0 +1,40 @@
+.instructor-head{
+  display: flex;
+  direction: row;
+  justify-content: space-between;
+  padding: 64px 0px;
+  width: 56%;
+  margin: auto;
+  align-items: center;
+  .a{
+    padding: auto 0px;
+  }
+}
+.name-block{
+  display: flex;
+  direction: row;
+  div{
+    padding-left: 32px;
+  }
+}
+.instructor-body{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 56%;
+  margin: auto;
+  padding-top: 72px;
+}
+
+.instructor-description{
+  padding-top: 48px;
+  padding-bottom: 80px;
+}
+
+.review-container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 40px;
+}

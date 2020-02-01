@@ -26,6 +26,7 @@ a:hover {
   border-radius: 20px;
   border: none;
   color: white;
+  height: 56px;
 }
 .box {
   background-color: $blue;
@@ -46,6 +47,9 @@ a:hover {
   color: $blue;
 }
 .white-btn:hover {
+  color: $blue;
+}
+.blue-font{
   color: $blue;
 }
 .instructor-card {
@@ -72,6 +76,21 @@ a:hover {
   display: flex;
   justify-content: space-between;
 }
+.review-card{
+  background: #FFFFFF 0% 0% no-repeat padding-box;
+  box-shadow: 0px 0px 20px #00000026;
+  border-radius: 20px;
+  opacity: 1;
+  width: 48%;
+  margin-bottom: 40px;
+  padding: 16px 24px;
+  text-align: justify;
+}
+.review-info{
+  display: flex;
+  justify-content: space-between;
+  font-size: 24px
+}
 .name-and-price {
   font-size: 30px;
   margin: 0;
@@ -83,12 +102,13 @@ a:hover {
 .rating {
   display: flex;
   align-items: center;
-  font-size: 15px;
+  font-size: 24px;
   margin: 0;
   color: $blue;
   img {
-    width: 14px;
-    height: 15px;
+    width: 24px;
+    height: 24px;
+    padding-right: 8px;
   }
 }
 .instructor-info-price {
