@@ -7,11 +7,10 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
 
-puts 'deleting all trips and sessions...'
+puts 'deleting all users, trips, sessions, reviews...'
 Session.delete_all
 Trip.delete_all
-
-puts 'deleting all existing users...'
+Review.delete_all
 User.delete_all
 
 20.times do
@@ -44,9 +43,7 @@ trip.note = "Please be nice, Vlad. I need a good russian ski instructor"
 trip.created_at = "2020-01-01T04:05:06+00:00"
 trip.updated_at = "2020-01-01T04:05:06+00:00"
 trip.save!
-
 puts "Created a Trip for student (User ID:#{User.first.id + 1}) booking instructor (User ID:#{User.first.id})"
-
 
 today = Date.today
 trip_id = Trip.first.id
@@ -74,5 +71,20 @@ session.trip_id = trip_id
 trip.created_at = "2020-01-02T04:05:06+00:00"
 trip.updated_at = "2020-01-02T04:05:06+00:00"
 session.save!
-
 puts "Created three sessions for Trip_id: #{trip_id}"
+
+# creating 3 reviews for the first 19 instructors
+user_id = User.first.id
+19.times do
+  3.times do
+    review = Review.new
+    review.instructor_id = user_id
+    review.student_id = user_id + 1
+    review.description = Faker::Lorem.sentence(word_count: 50)
+    review.rating = rand(1..5)
+    review.save!
+  end
+  user_id += 1
+end
+puts 'Created 3 review per instructor'
+
