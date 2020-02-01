@@ -4,8 +4,6 @@ import "bootstrap";
 const bookingSlots =  document.querySelectorAll(".booking-slot-open");
 
 bookingSlots.forEach((element) => {
- element.addEventListener("click", () =>
-    element.classList.toggle("booked"));
-    checkbox.checked = !checkbox.checked
+ element.addEventListener("click", () => element.classList.toggle("booked"));
  // To add toggle checkbox
 });
