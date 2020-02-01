@@ -31,40 +31,54 @@
         <p>15:00-16:00</p>
       </div>
     <!-- For each day, print the headers date and day of the week -->
-    <% counter = 0 %>
-    <% while counter < 7 do %>
-      <% booking_column_date = "2020-01-29 09:00:00".to_datetime + counter %>
-      <div style="display: flex;">
-        <div class="booking-date-day">
-          <div class="booking-date">
-            <p class="date"><%= booking_column_date.day %></p>
-            <p class="day-of-week"><%= booking_column_date.strftime('%A') %></p>
-          </div>
-          <!-- For each hour -->
-          <% for i in 0..6 %>
-          <!-- Create an empty validation array where we will store true each time there is a match with existing sessions -->
-            <% validation_array = [] %>
-            <% @sessions[0].each do |session|%>
-              <% if booking_column_date + i.hour == session.start %>
-                <% validation_array << true %>
-              <% else %>
-                <% validation_array << false %>
+      <% counter = 0 %>
+      <%= form_for(:trip, html: {class: "form-container"}, url: user_trips_path(@instructor), method: :post) do |f| %>
+        <% while counter < 7 do %>
+        <% booking_column_date = "2020-01-29 09:00:00".to_datetime + counter %>
+        <div style="display: flex;">
+          <div class="booking-date-day">
+            <div class="booking-date">
+              <p class="date"><%= booking_column_date.day %></p>
+              <p class="day-of-week"><%= booking_column_date.strftime('%A') %></p>
+            </div>
+            <!-- For each hour -->
+            <% for i in 0..6 %>
+            <!-- Create an empty validation array where we will store true each time there is a match with existing sessions -->
+              <% validation_array = [] %>
+              <% @booked_sessions[0].each do |session|%>
+                <% if booking_column_date + i.hour == session.start %>
+                  <% validation_array << true %>
+                <% else %>
+                  <% validation_array << false %>
+                <% end %>
+              <% end %>
+                <!-- Look up if the validations array contains at least one match. If yes, set class to booked -->
+              <%= f.fields_for :sessions do |s| %>
+                <% if validation_array.include? true %>
+                  <div class="booking-slot booked" id="booked" data-set-timeslot="<%= booking_column_date + i.hour %>">
+                    <% s.check_box :start %>
+                  </div>
+                <% else %>
+                  <div class="booking-slot" id="open" data-set-timeslot="<%= booking_column_date + i.hour %>">
+                    <% s.check_box :start %>
+                  </div>
+                <% end %>
               <% end %>
             <% end %>
-              <!-- Look up if the validations array contains at least one match. If yes, set class to booked -->
-            <% if validation_array.include? true %>
-              <div class="booking-slot booked" id="booked" data-set-timeslot="<%= booking_column_date + i.hour %>"></div>
-            <% else %>
-              <div class="booking-slot" id="open" data-set-timeslot="<%= booking_column_date + i.hour %>"></div>
-            <% end %>
-          <% end %>
-        </div>
-      </div>
-      <% counter += 1 %>
-    <% end %>
+          </div>
+        </div>s
+        <% counter += 1 %>
+        <% end %>
+        <!-- Passing current user in the params -->
+        <p>HIDDEN FIELD</p>
+        <%= f.hidden_field :student_id, value: "#{current_user.id}" %>
+        <%= f.submit %>
+      <% end %>
     </div>
   </div>
 </div>
+
+
 <!-- Open: Make sure unselect deletes session from Session array -->
 <!-- Open: Dynamic price changes -->
 <!-- Open: create Continue button to create the trip -->

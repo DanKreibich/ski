@@ -1,11 +1,15 @@
 class TripsController < ApplicationController
   def new
     @trip = Trip.new
+    @student = current_user
     @instructor = User.find(params[:user_id])
-    @sessions = instructor_sessions(@instructor)
+    @booked_sessions = instructor_sessions(@instructor)
+    3.times { @trip.sessions.build }
   end
 
   def create
+
+    raise
     # temporary data
     today = Date.today
     session_one = "#{today + 1} 09:00:00 UTC +00:00".to_datetime
@@ -24,14 +28,14 @@ class TripsController < ApplicationController
     note = "Llorem ipsum Llorem ipsum Llorem ipsum Llorem ipsum"
 
     # do a check if all sessions are still available
-    instructor = User.find(params[:user_id])
+    @instructor = User.find(params[:user_id])
     student_id = instructor.id + 1 # !!!!!!!!!! Needs to be adjusted with live data
-    trips = Trip.where(instructor_id: instructor.id)
+    @trips = Trip.where(instructor_id: instructor.id)
 
     booked_sessions = [] # for all trips that have been already booked by other users
     sessions_starts = [] # are all the start times of booked_sessions
 
-    trips.each do
+    @trips.each do
       booked_sessions += Session.where(trip_id: trip.id).to_a
       booked_sessions.each do |session|
         sessions_starts << session.start
