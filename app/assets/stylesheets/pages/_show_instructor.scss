@@ -26,15 +26,24 @@
   margin: auto;
   padding-top: 72px;
 }
-
 .instructor-description{
   padding-top: 48px;
   padding-bottom: 80px;
 }
-
 .review-container{
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   margin-top: 40px;
+}
+.photo-area{
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 40px;
+  img{
+    width: 208px;
+    height: 208px;
+    margin: 0px 12px;
+    padding-bottom: 24px;
+  }
 }

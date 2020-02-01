@@ -18,6 +18,8 @@
   <div class="instructor-description">
     <p>Description: <%= @instructor.description %></p>
   </div>
+
+
   <h1 class="blue-font">Reviews</h1>
   <div class="review-container">
     <!-- creates for each review a separate box -->
@@ -31,4 +33,13 @@
       </div>
     <% end %>
   </div>
+
+
+  <h1 class="blue-font">Photos</h1>
+  <div class="photo-area">
+    <% @photos.each do |photo| %>
+      <%= image_tag ("#{photo.url}") %>
+    <% end %>
+  </div>
+
 </div>
