@@ -7,7 +7,7 @@
         <h3>Resort: <%= @instructor.resort %></h3>
       </div>
     </div>
-    <%= link_to "Continue", new_user_trip_path(@instructor), method: :get, class: "blue-btn" %>
+    <%= link_to "Continue", new_trip_path(@instructor), method: :get, class: "blue-btn" %>
   </div>
 </div>
 
@@ -18,7 +18,6 @@
   <div class="instructor-description">
     <p>Description: <%= @instructor.description %></p>
   </div>
-
 
   <h1 class="blue-font">Reviews</h1>
   <div class="review-container">
