@@ -35,7 +35,7 @@
       <%= form_for(:trip, html: {class: "form-container"}, url: user_trips_path(@instructor), method: :post) do |f| %>
         <% while counter < 7 do %>
         <% booking_column_date = "2020-01-29 09:00:00".to_datetime + counter %>
-        <div style="display: flex;">
+        <div>
           <div class="booking-date-day">
             <div class="booking-date">
               <p class="date"><%= booking_column_date.day %></p>
@@ -66,14 +66,18 @@
               <% end %>
             <% end %>
           </div>
-        </div>s
+        </div>
         <% counter += 1 %>
         <% end %>
         <!-- Passing current user in the params -->
-        <p>HIDDEN FIELD</p>
         <%= f.hidden_field :student_id, value: "#{current_user.id}" %>
-        <%= f.submit %>
       <% end %>
+    </div>
+
+    <!-- Back and continue buttons -->
+    <div class="booking_table_buttons">
+      <%= link_to "Back",   user_path(@instructor), class: "back btn" %>
+      <%= link_to "Continue", user_trips_path(@instructor), class: "continue btn" %>
     </div>
   </div>
 </div>
