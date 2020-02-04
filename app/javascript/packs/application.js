@@ -9,21 +9,53 @@ const timeArray = []
 
 bookingSlots.forEach((element) => {
   element.addEventListener("click", () => {
-    element.classList.toggle("booked");
+    element.classList.toggle("selected");
     timeArray.push(element.dataset.timeslot);
-    console.log(timeArray);
   })
   // To add toggle checkbox
 });
 
-const send = () => {
-  $.ajax({
-    url : "TripsCreate",
-    type : "post",
-    data : { data_value: JSON.stringify(timeArray) }
-  });
-  console.log("click");
-};
 
-continueBtn.addEventListener("click", send());
+
+// Grab pricing divs for dynamic price update
+
+const totalPrice = document.querySelector(".total-price");
+const bookingNumSessions = document.querySelector(".booking-num-sessions");
+const sessionPrice = document.querySelector(".session-price");
+
+
+bookingSlots.forEach((e) => {
+  e.addEventListener("click", () => {
+    const selectedSessions = document.querySelectorAll(".selected")
+    bookingNumSessions.innerText =  selectedSessions.length;
+    totalPrice.innerText = parseInt(bookingNumSessions.innerText, 10)
+    * parseInt(sessionPrice.innerText, 10);
+  });
+});
+
+
+// WIP: attempt to push array of session.start to the controller
+
+// const send = (e) => {
+//   e.preventDefault()
+//   fetch("/users/41/trips", {
+//     method: "POST",
+//     // body: { time: JSON.stringify(timeArray) }
+//     body: JSON.stringify({first_name: "Ricky", last_name: "Bobby"}),
+//     headers: {
+//     'Content-Type': 'application/json',
+//     'X-CSRF-Token': Rails.csrfToken()
+//   },
+//   })
+//     .then(response => {
+//       console.log('hi')
+//       response.json()
+//     })
+//     .then((data) => {
+//       return data; // Look at local_names.default
+//     });
+// };
+
+
+// continueBtn.addEventListener("click", send);
 
