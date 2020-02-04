@@ -56,12 +56,11 @@
               <%= f.fields_for :sessions do |s| %>
                 <% if validation_array.include? true %>
 
-                  <div class="booking-slot-booked" data-timeslot="<%= booking_column_date + i.hour %>">
-                    <%= s.check_box :start, class: "input-checkbox" %>
+                  <div class="booking-slot-booked">
                   </div>
                 <% else %>
-                  <div class="booking-slot-open" data-timeslot="<%= booking_column_date + i.hour %>">
-                    <%= s.check_box :start, class: "input-checkbox" %>
+                  <div class="booking-slot-open">
+                    <%= s.radio_button "#{booking_column_date + i.hour}", "selected", checked: false, class: "input-checkbox d-hidden" %>
                   </div>
                 <% end %>
               <% end %>
