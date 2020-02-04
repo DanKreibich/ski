@@ -17,28 +17,12 @@ bookingSlots.forEach((element) => {
  element.addEventListener("click", myFunction);
 });
 
-
-
 addEventListener("click", myFunction);
-
 
 document.querySelectorAll("img").forEach((img) => {
   img.addEventListener("click", (event) => {
     event.currentTarget.classList.toggle("img-circle");
   });
 });
-
-// bookingSlots.addEventListener("click", myFunction);
-
-
-// const testClick = () => {
-//   booking_slots.addEventListener("click", (event) => {
-//   console.log("Just clicked the box");
-// });
-// };
-
-
-
-
 
 export { myFunction };

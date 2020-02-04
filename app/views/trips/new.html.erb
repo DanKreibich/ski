@@ -8,11 +8,11 @@
       </div>
     </div>
     <div class="booking-price">
-      <p class="booking-total-price">€1200</p>
+      <p class="booking-total-price">€0</p>
       <div class="multiply-price-block">
-        <p class="booking-num-sessions">12</p>
+        <p class="booking-num-sessions">0</p>
         <p class="multiply">x</p>
-        <p class="booking-one-session-price">€50</p>
+        <p class="booking-one-session-price">€<%= @instructor.hourly_rate %></p>
       </div>
     </div>
   </div>
@@ -35,7 +35,7 @@
       <%= form_for(:trip, html: {class: "form-container"}, url: user_trips_path(@instructor), method: :post) do |f| %>
         <% while counter < 7 do %>
         <% booking_column_date = "2020-01-29 09:00:00".to_datetime + counter %>
-        <div style="display: flex;">
+        <div>
           <div class="booking-date-day">
             <div class="booking-date">
               <p class="date"><%= booking_column_date.day %></p>
@@ -55,29 +55,34 @@
                 <!-- Look up if the validations array contains at least one match. If yes, set class to booked -->
               <%= f.fields_for :sessions do |s| %>
                 <% if validation_array.include? true %>
-                  <div class="booking-slot booked" data-set-timeslot="<%= booking_column_date + i.hour %>">
-                    <% s.check_box :start %>
+
+                  <div class="booking-slot booked" data-timeslot="<%= booking_column_date + i.hour %>">
+                    <%= s.check_box :start, class: "input-checkbox" %>
                   </div>
                 <% else %>
-                  <div class="booking-slot-open" data-set-timeslot="<%= booking_column_date + i.hour %>">
-                    <% s.check_box :start %>
+                  <div class="booking-slot-open" data-timeslot="<%= booking_column_date + i.hour %>">
+                    <%= s.check_box :start, class: "input-checkbox" %>
                   </div>
                 <% end %>
               <% end %>
             <% end %>
           </div>
-        </div>s
+        </div>
         <% counter += 1 %>
         <% end %>
         <!-- Passing current user in the params -->
-        <p>HIDDEN FIELD</p>
         <%= f.hidden_field :student_id, value: "#{current_user.id}" %>
-        <%= f.submit %>
+        <%= f.submit "Fuck yeah", class: "test" %>
       <% end %>
+    </div>
+
+    <!-- Back and continue buttons -->
+    <div class="booking_table_buttons">
+      <%= link_to "Back",   user_path(@instructor), class: "back btn" %>
+      <%= link_to "Continue", user_trips_path(@instructor), class: "continue btn" %>
     </div>
   </div>
 </div>
-
 
 <!-- Open: Make sure unselect deletes session from Session array -->
 <!-- Open: Dynamic price changes -->
