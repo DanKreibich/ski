@@ -65,7 +65,5 @@ class TripsController < ApplicationController
       @sessions << Session.where(trip_id: trip.id)
     end
     @sessions
-
   end
-
 end

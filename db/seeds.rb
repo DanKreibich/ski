@@ -11,8 +11,8 @@ puts 'deleting all users, trips, sessions, reviews, images...'
 Session.delete_all
 Trip.delete_all
 Review.delete_all
-User.delete_all
 Photo.delete_all
+User.delete_all
 
 20.times do
   instructor = User.new
@@ -49,13 +49,19 @@ puts "Created a Trip for student (User ID:#{User.first.id + 1}) booking instruct
 today = Date.today
 trip_id = Trip.first.id
 
-session = Session.new
-session.start = "#{today + 1} 09:00:00 UTC +00:00".to_datetime
-session.end = "#{today + 1} 10:00:00 UTC +00:00".to_datetime
-session.trip_id = trip_id
-trip.created_at = "2020-01-02T04:05:06+00:00"
-trip.updated_at = "2020-01-02T04:05:06+00:00"
-session.save!
+# Creating a day that is booked
+i = 9
+9.times do
+  session = Session.new
+  session.start = "#{today + 1} 0#{i}:00:00 UTC +00:00".to_datetime
+  session.end = "#{today + 1} #{i+1}:00:00 UTC +00:00".to_datetime
+  session.trip_id = trip_id
+  trip.created_at = "2020-01-02T04:05:06+00:00"
+  trip.updated_at = "2020-01-02T04:05:06+00:00"
+  session.save!
+  i += 1
+end
+
 
 session = Session.new
 session.start = "#{today + 2} 11:00:00 UTC +00:00".to_datetime

@@ -1,5 +1,5 @@
 <%= form_tag users_path, method: :get, class: "search-form-home-page" do%>
-  <%= text_field_tag 'query', '', placeholder: 'Choose your location', class: 'input-form' %>
+  <%= text_field_tag 'location', '', placeholder: 'Choose your location', class: 'input-form' %>
   <%= date_field_tag 'start_date', '', placeholder: "Choose your start dates", class: "input-form" %>
   <%= date_field_tag 'end_date', '', placeholder: "Choose your end dates", class: "input-form" %>
   <%= submit_tag "Search", class: "blue-btn"%>
