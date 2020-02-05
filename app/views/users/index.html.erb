@@ -11,11 +11,11 @@
         <p>its gona be a price sorting here</p>
       </div>
       <div class="rating-sorting">
-        <p class="selector">1</p>
-        <p class="selector">2</p>
-        <p class="selector">3</p>
-        <p class="selector">4</p>
-        <p class="selector">5</p>
+        <p class="selector" id="rating-1"><%= image_tag ("rating.svg") %></p>
+        <p class="selector" id="rating-2"><%= image_tag ("rating.svg") %></p>
+        <p class="selector" id="rating-3"><%= image_tag ("rating.svg") %></p>
+        <p class="selector" id="rating-4"><%= image_tag ("rating.svg") %></p>
+        <p class="selector" id="rating-5"><%= image_tag ("rating.svg") %></p>
       </div>
   </div>
   </div>
@@ -44,3 +44,5 @@
     <% end %>
   </div>
 </div>
+
+    <%= javascript_pack_tag 'select_rating' %>
