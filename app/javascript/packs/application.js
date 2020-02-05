@@ -1,5 +1,10 @@
 import "bootstrap";
+// importing function for autocomplete
+import { autocompleteSearch } from "./autocomplete";
 // // import { myFunction } from '../trip_new.js.erb'
+
+// calling autocomplete function
+autocompleteSearch();
 
 const bookingSlots =  document.querySelectorAll(".booking-slot-open");
 const continueBtn = document.querySelector(".continue");
