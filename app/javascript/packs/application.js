@@ -2,6 +2,11 @@ import "bootstrap";
 // importing function for autocomplete
 import { autocompleteSearch } from "./autocomplete";
 // // import { myFunction } from '../trip_new.js.erb'
+import flatpickr from "flatpickr";
+import "flatpickr/dist/flatpickr.min.css";
+
+flatpickr(".datepicker", {});
+
 
 // calling autocomplete function
 // autocompleteSearch();
