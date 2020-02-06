@@ -9,7 +9,7 @@ flatpickr(".datepicker", {});
 
 
 // calling autocomplete function
-autocompleteSearch();
+// autocompleteSearch();
 
 const bookingSlots =  document.querySelectorAll(".booking-slot-open");
 
