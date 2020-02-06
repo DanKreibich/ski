@@ -37,6 +37,9 @@
 .selector:hover {
   opacity: 1;
 }
+.selected {
+  opacity: 1;
+}
 .show-cards-wrapper {
   width: 100%;
   padding: 40px 0;
@@ -50,4 +53,7 @@
 }
 .instructor-card:nth-child(4n+4) {
   margin: 0 0 80px 0;
+}
+.selected{
+  opacity: 1;
 }

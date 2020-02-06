@@ -6,6 +6,7 @@
     "bootstrap": "^4.4.1",
     "flatpickr": "^4.6.3",
     "jquery": "^3.4.1",
+    "js-autocomplete": "^1.0.4",
     "popper.js": "^1.16.1"
   },
   "devDependencies": {
