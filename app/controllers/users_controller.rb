@@ -1,8 +1,12 @@
 class UsersController < ApplicationController
   def index
-    search
-    if @available_instructors
-      @instructors = @available_instructors
+    if params[:query].present?
+
+    # Add correct db search or add gem
+    # search
+    # if @available_instructors
+    #   @instructors = @available_instructors
+
     else
       @instructors = User.all
     end

@@ -3,9 +3,10 @@
     <%= render 'shared/search' %>
     <div class="sorting-container">
       <div class="gender-sorting">
-        <p class="selector">Any</p>
-        <p class="selector">Male</p>
-        <p class="selector">Female</p>
+        <!-- <p class="selector" id="any"> Any</p>  -->
+        <%= link_to "Any", users_path, method: :get, class: "selector selected", id: "any", remote: true %>
+        <%= link_to "Male", users_path, method: :get, class: "selector", id: "male", remote: true %>
+        <%= link_to "Female", users_path, method: :get, class: "selector", id: "female", remote: true %>
       </div>
       <div class="price-sorting">
         <p>its gona be a price sorting here</p>
@@ -24,7 +25,7 @@
 <div class="show-cards-wrapper">
   <div class="show-cards-container">
     <% @instructors.each do |instructor| %>
-      <div class="instructor-card">
+      <div class="instructor-card" data-gender="<%= instructor.gender %>">
         <%= link_to user_path(instructor) do %>
           <%= image_tag ("#{instructor.avatar}")%>
           <div class="instructor-info">
@@ -45,4 +46,7 @@
   </div>
 </div>
 
-    <%= javascript_pack_tag 'select_rating' %>
+
+<%= javascript_pack_tag 'index_filter_gender' %>
+<%= javascript_pack_tag 'select_rating' %>
+
