@@ -4,7 +4,7 @@ import { autocompleteSearch } from "./autocomplete";
 // // import { myFunction } from '../trip_new.js.erb'
 
 // calling autocomplete function
-autocompleteSearch();
+// autocompleteSearch();
 
 const bookingSlots =  document.querySelectorAll(".booking-slot-open");
 // const continueBtn = document.querySelector(".continue");
