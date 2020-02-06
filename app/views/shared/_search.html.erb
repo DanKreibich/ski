@@ -1,6 +1,10 @@
 <%= form_tag users_path, method: :get, class: "search-form-home-page" do%>
-  <%= text_field_tag 'query', '', placeholder: 'Choose your location', class: 'input-form' %>
-  <%= date_field_tag 'start_date', '', placeholder: "Choose your start dates", class: "input-form" %>
-  <%= date_field_tag 'end_date', '', placeholder: "Choose your end dates", class: "input-form" %>
-  <%= submit_tag "Search", class: "blue-btn"%>
+  <div id= "search-data" data-resorts="<%= @resorts.to_json %>">
+    <!-- "required" is needed for all fields as otherwise when you hit Enter when selecting from the autoform, the form would be sent -->
+    <!-- will refactor the datepicker with faltpickr gem to show only relevant dates -->
+    <%= text_field_tag :location, nil ,autocomplete: :off, placeholder: 'Choose your location', class: 'input-form', required: true %>
+    <%= date_field_tag 'start_date', '', placeholder: "Choose your start dates", class: "input-form", min: Date.today, required: true %>
+    <%= date_field_tag 'end_date', '', placeholder: "Choose your end dates", class: "input-form", min: Date.today, required: true %>
+    <%= submit_tag "Search", class: "blue-btn"%>
+  </div>
 <% end %>

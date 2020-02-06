@@ -5,11 +5,14 @@ class TripsController < ApplicationController
     @instructor = User.find(params[:user_id])
     @booked_sessions = instructor_sessions(@instructor)
     3.times { @trip.sessions.build }
+
+    @sessions = []
   end
 
   def create
 
     raise
+    @session = Trip.new(trip_params)
     # # temporary data
     # today = Date.today
     # session_one = "#{today + 1} 09:00:00 UTC +00:00".to_datetime
@@ -65,7 +68,9 @@ class TripsController < ApplicationController
       @sessions << Session.where(trip_id: trip.id)
     end
     @sessions
-
   end
 
+  def trip_params
+    params.require(:trip).permit(:all)
+  end
 end

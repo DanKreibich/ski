@@ -1,23 +1,50 @@
 import "bootstrap";
+// importing function for autocomplete
+import { autocompleteSearch } from "./autocomplete";
 // // import { myFunction } from '../trip_new.js.erb'
 
+// calling autocomplete function
+// autocompleteSearch();
+
 const bookingSlots =  document.querySelectorAll(".booking-slot-open");
-const continueBtn = document.querySelector(".continue");
+// const continueBtn = document.querySelector(".continue");
+// const sessionsDiv = document.getElementById("sessions-array");
+// const timeArray = [];
+// // console.log(bookingSlots);
+// // console.log('hello')
+// const sessionsString = JSON.parse(sessionsDiv.dataset.session);
+// console.log(sessionsString)
+// sessionsString.forEach((session) => {
+//   // timeArray.push()
+// })
+// // console.log(typeof sessionsString);
 
-
-const timeArray = []
-
-bookingSlots.forEach((element) => {
+bookingSlots.forEach(element => {
   element.addEventListener("click", () => {
     element.classList.toggle("selected");
-    timeArray.push(element.dataset.timeslot);
+    var checkbox = element.querySelector("input");
+    console.log(checkbox);
+    checkbox.checked = !checkbox.checked;
   })
+})
+    // timeArray.push(element.dataset.timeslot);
+    // console.log(sessionsArray);
+    // sessionsString += element.dataset.timeslot;
+    // console.log(timeArray);
+// const sessions = JSON.parse(timeArray);
+  // return timeArray
+  // const sessions = JSON.parse(timeArray);
+  // sessions.forEach((session) => {
+    // console.log(timeArray)
+  // })
+  // })
   // To add toggle checkbox
-});
+
+// });
+//     // console.log(sessions);
 
 
-
-// Grab pricing divs for dynamic price update
+// // Grab pricing divs for dynamic price update
 
 const totalPrice = document.querySelector(".total-price");
 const bookingNumSessions = document.querySelector(".booking-num-sessions");
@@ -33,29 +60,12 @@ bookingSlots.forEach((e) => {
   });
 });
 
-
-// WIP: attempt to push array of session.start to the controller
-
-// const send = (e) => {
-//   e.preventDefault()
-//   fetch("/users/41/trips", {
-//     method: "POST",
-//     // body: { time: JSON.stringify(timeArray) }
-//     body: JSON.stringify({first_name: "Ricky", last_name: "Bobby"}),
-//     headers: {
-//     'Content-Type': 'application/json',
-//     'X-CSRF-Token': Rails.csrfToken()
-//   },
-//   })
-//     .then(response => {
-//       console.log('hi')
-//       response.json()
-//     })
-//     .then((data) => {
-//       return data; // Look at local_names.default
-//     });
-// };
+var form = document.querySelector("form");
+form.addEventListener("submit", (event) => {
+  event.preventDefault();
+  // Update hidden field with price
+  form.submit();
+})
 
 
 // continueBtn.addEventListener("click", send);
-

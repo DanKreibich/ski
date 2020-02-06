@@ -56,12 +56,11 @@
               <%= f.fields_for :sessions do |s| %>
                 <% if validation_array.include? true %>
 
-                  <div class="booking-slot-booked" data-timeslot="<%= booking_column_date + i.hour %>">
-                    <%= s.check_box :start, class: "input-checkbox" %>
+                  <div class="booking-slot-booked">
                   </div>
                 <% else %>
-                  <div class="booking-slot-open" data-timeslot="<%= booking_column_date + i.hour %>">
-                    <%= s.check_box :start, class: "input-checkbox" %>
+                  <div class="booking-slot-open">
+                    <%= s.radio_button "#{booking_column_date + i.hour}", "selected", checked: false, class: "input-checkbox d-hidden" %>
                   </div>
                 <% end %>
               <% end %>
@@ -72,15 +71,14 @@
         <% end %>
         <!-- Passing current user in the params -->
         <%= f.hidden_field :student_id, value: "#{current_user.id}" %>
-        <%= f.submit "Fuck yeah", class: "test" %>
-      <% end %>
-    </div>
+      </div>
 
-    <!-- Back and continue buttons -->
-    <div class="booking_table_buttons">
-      <%= link_to "Back",  user_path(@instructor), class: "back btn" %>
-      <%= link_to "Continue", user_trips_path(user_id: @instructor), method: :post, class: "continue btn" %>
-    </div>
+      <!-- Back and continue buttons -->
+      <div class="booking_table_buttons">
+        <%= link_to "Back",  user_path(@instructor), class: "back btn" %>
+        <%= f.submit "Continue", class: "continue btn" %>
+      </div>
+    <% end %>
   </div>
 </div>
 
