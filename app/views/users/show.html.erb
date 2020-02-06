@@ -1,18 +1,18 @@
 <div class="wrapper">
   <div class ="instructor-head"> <!-- continue with _show_instructor.scss-->
     <div class="name-block">
-    <%= image_tag ("#{@instructor.avatar}"), class: "avatar-large" %>
+      <div class="avatar-large" style="background-image: url(<%= @instructor.avatar %>)"></div>
       <div>
         <h1><%= @instructor.first_name %> <%= @instructor.last_name %></h1>
         <h3>Resort: <%= @instructor.resort %></h3>
       </div>
     </div>
-    <%= link_to "Continue", new_trip_path(@instructor), method: :get, class: "blue-btn" %>
+    <%= link_to "Book a lesson", new_trip_path(@instructor), method: :get, class: "booking-btn" %>
   </div>
 </div>
 
 <div class="instructor-body">
-  <%= image_tag ("#{@instructor.avatar}"), class: "avatar-extra-large" %>
+  <div class="avatar-extra-large" style="background-image: url(<%= @instructor.avatar %>)"></div>
   <h1><%= @instructor.first_name %> <%= @instructor.last_name %></h1>
   <h3>Resort: <%= @instructor.resort %></h3>
   <div class="instructor-description">
