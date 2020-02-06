@@ -12,6 +12,8 @@
   <body>
     <% if request.fullpath == "/" %>
       <!-- the navbar is rendered in file home.html.erb -->
+    <% elsif request.fullpath.match('trips$') %>
+      <%= render 'shared/navbar_booking' %>
     <% else %>
       <%= render 'shared/navbar_index' %>
     <% end %>
