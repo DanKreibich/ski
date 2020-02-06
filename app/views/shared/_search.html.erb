@@ -1,6 +1,8 @@
 <%= form_tag users_path, method: :get, class: "search-form-home-page" do%>
-  <%= text_field_tag 'location', nil, autocomplete: :off, placeholder: 'Choose your location', class: 'input-form', required: true %>
-  <%= date_field_tag 'start_date', '', as: :string, placeholder: "From", class: "input-form datepicker", min: Date.today, required: true %>
-  <%= date_field_tag 'end_date','', as: :string, placeholder: "To", class: "input-form datepicker", min: Date.today, required: true %>
-  <%= submit_tag "Search", class: "blue-btn"%>
+  <div id= "search-data" data-resorts="<%= @resorts.to_json %>">
+    <%= text_field_tag 'location', nil, autocomplete: :off, placeholder: 'Choose your location', class: 'input-form', required: true %>
+    <%= date_field_tag 'start_date', '', as: :string, placeholder: "From", class: "input-form datepicker", min: Date.today, required: true %>
+    <%= date_field_tag 'end_date','', as: :string, placeholder: "To", class: "input-form datepicker", min: Date.today, required: true %>
+    <%= submit_tag "Search", class: "blue-btn"%>
+  </div>
 <% end %>
