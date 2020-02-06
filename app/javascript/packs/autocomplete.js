@@ -22,7 +22,7 @@ const autocompleteSearch = function() {
   }
 };
 
-export { autocompleteSearch };
+// export { autocompleteSearch };
 
 
 

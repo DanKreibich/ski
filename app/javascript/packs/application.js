@@ -68,28 +68,4 @@ form.addEventListener("submit", (event) => {
 })
 
 
-// // WIP: attempt to push array of session.start to the controller
-
-// const send = (e) => {
-//   e.preventDefault()
-//   fetch("/users/41/trips", {
-//     method: "POST",
-//     // body: { time: JSON.stringify(timeArray) }
-//     body: { session: JSON.stringify({first_name: "Ricky", last_name: "Bobby"}) },
-//     // data: { session: JSON.stringify({first_name: "Ricky", last_name: "Bobby"})}
-//     headers: {
-//     'Content-Type': 'application/json',
-//     'X-CSRF-Token': Rails.csrfToken()
-//   },
-//   })
-//   //   .then(response => {
-//   //     console.log('hi')
-//   //     response.json()
-//   //   })
-//   //   .then((data) => {
-//   //     return data; // Look at local_names.default
-//     // });
-// };
-
-
 // continueBtn.addEventListener("click", send);

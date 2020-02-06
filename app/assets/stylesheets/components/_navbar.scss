@@ -33,8 +33,30 @@
 }
 
 // Styles for navbar on Index page
-
+.navber-flex {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
 .blue-background {
   background: $blue;
 }
+
+// Styles for navbar on Booking page
+
+.booking-central-section {
+  padding-left: 20%;
+  display: flex;
+}
+.nav-element-booking-step {
+  font-size: 20px;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  padding: 10px 50px;
+  border-bottom: 6px solid rgba(255,255,255, .3);
+}
+.nav-element-booking-step:first-child {
+ border-bottom: 6px solid rgba(255,255,255, 1);
+}
+
 
