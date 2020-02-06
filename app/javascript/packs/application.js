@@ -1,5 +1,11 @@
 import "bootstrap";
 // // import { myFunction } from '../trip_new.js.erb'
+import flatpickr from "flatpickr";
+import "flatpickr/dist/flatpickr.min.css";
+import rangePlugin from "flatpickr/dist/plugins/rangePlugin"
+
+flatpickr(".datepicker", {});
+
 
 const bookingSlots =  document.querySelectorAll(".booking-slot-open");
 const continueBtn = document.querySelector(".continue");
