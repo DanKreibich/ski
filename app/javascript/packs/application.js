@@ -9,20 +9,9 @@ flatpickr(".datepicker", {});
 
 
 // calling autocomplete function
-// autocompleteSearch();
+autocompleteSearch();
 
 const bookingSlots =  document.querySelectorAll(".booking-slot-open");
-// const continueBtn = document.querySelector(".continue");
-// const sessionsDiv = document.getElementById("sessions-array");
-// const timeArray = [];
-// // console.log(bookingSlots);
-// // console.log('hello')
-// const sessionsString = JSON.parse(sessionsDiv.dataset.session);
-// console.log(sessionsString)
-// sessionsString.forEach((session) => {
-//   // timeArray.push()
-// })
-// // console.log(typeof sessionsString);
 
 bookingSlots.forEach(element => {
   element.addEventListener("click", () => {
@@ -32,21 +21,6 @@ bookingSlots.forEach(element => {
     checkbox.checked = !checkbox.checked;
   })
 })
-    // timeArray.push(element.dataset.timeslot);
-    // console.log(sessionsArray);
-    // sessionsString += element.dataset.timeslot;
-    // console.log(timeArray);
-// const sessions = JSON.parse(timeArray);
-  // return timeArray
-  // const sessions = JSON.parse(timeArray);
-  // sessions.forEach((session) => {
-    // console.log(timeArray)
-  // })
-  // })
-  // To add toggle checkbox
-
-// });
-//     // console.log(sessions);
 
 
 // // Grab pricing divs for dynamic price update
@@ -68,9 +42,6 @@ bookingSlots.forEach((e) => {
 var form = document.querySelector("form");
 form.addEventListener("submit", (event) => {
   event.preventDefault();
-  // Update hidden field with price
+  // Update hidden field with price and student_id (to check)
   form.submit();
 })
-
-
-// continueBtn.addEventListener("click", send);
