@@ -2,12 +2,7 @@ class UsersController < ApplicationController
   def index
     # Add correct db search or add gem
     search
-    if @available_instructors.empty?
-      @instructors = User.all
-    else
-      @instructors = @available_instructors
-      # should actually return "empty state" screen: "no instructors available for your query"
-    end
+    @instructors = @available_instructors
     session[:start_date] = params[:start_date]
     session[:end_date] = params[:end_date]
   end
