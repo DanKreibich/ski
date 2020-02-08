@@ -10,7 +10,6 @@ class TripsController < ApplicationController
   end
 
   def create
-
     # the following list depicts what is expected to be received. Needs to be renamed ones real data comes
     selected_sessions_array = []
     params[:trip][:sessions].each do |key|
@@ -50,13 +49,29 @@ class TripsController < ApplicationController
         session = Session.new(trip_id: trip.id, start: start_datetime, end: start_datetime + 1.hour)
         session.save!
       end
-      redirect_to user_path(@instructor)
+      redirect_to edit_user_trip_path(user_id: instructor_id, id: trip.id)
     else
       flash[:notice] = "Couldn't be saved as some slot had been booked by another user in the meantime. Please load page again."
     end
-
   end
 
+  def edit
+    @instructor = User.find(params[:user_id])
+    @trip = Trip.find(params[:id])
+    @sessions = Session.where(trip_id: @trip.id)
+  end
+
+  def update
+    trip = Trip.find(params[:id])
+    trip.status = 1
+    trip.save
+    sessions = Session.where(trip_id: trip.id)
+    sessions.each do |session|
+      session.status = 1
+      session.save
+    end
+    redirect_to root_path
+  end
 
   private
 

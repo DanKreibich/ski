@@ -1,0 +1,14 @@
+<h1>edit.html.erb</h1>
+
+<p>You are about to book lessons with <%= @instructor.first_name %></p>
+
+<p>Here is a summary of your sessions</p>
+<ul>
+  <% @sessions.each do |session| %>
+    <li>
+      <p><%=  session.start.to_date.strftime('%A') %>, <%=  session.start.to_date %> from <%=  session.start.strftime("%I:%M %P") %>  to <%= session.end.strftime("%I:%M %P") %></p>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to "Pay Now", user_trip_path(user_id: @instructor.id, id: @trip.id), method: :patch %>

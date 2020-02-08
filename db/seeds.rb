@@ -43,6 +43,7 @@ trip.num_students = 2
 trip.note = "Please be nice, Vlad. I need a good russian ski instructor"
 trip.created_at = "2020-01-01T04:05:06+00:00"
 trip.updated_at = "2020-01-01T04:05:06+00:00"
+trip.status = 1
 trip.save!
 puts "Created a Trip for student (User ID:#{User.first.id + 1}) booking instructor (User ID:#{User.first.id})"
 
@@ -56,8 +57,9 @@ i = 9
   session.start = "#{today + 1} 0#{i}:00:00 UTC +00:00".to_datetime
   session.end = "#{today + 1} #{i+1}:00:00 UTC +00:00".to_datetime
   session.trip_id = trip_id
-  trip.created_at = "2020-01-02T04:05:06+00:00"
-  trip.updated_at = "2020-01-02T04:05:06+00:00"
+  session.created_at = "2020-01-02T04:05:06+00:00"
+  session.updated_at = "2020-01-02T04:05:06+00:00"
+  session.status = 1
   session.save!
   i += 1
 end
@@ -67,16 +69,18 @@ session = Session.new
 session.start = "#{today + 2} 11:00:00 UTC +00:00".to_datetime
 session.end = "#{today + 2} 14:00:00 UTC +00:00".to_datetime
 session.trip_id = trip_id
-trip.created_at = "2020-01-02T04:05:06+00:00"
-trip.updated_at = "2020-01-02T04:05:06+00:00"
+session.created_at = "2020-01-02T04:05:06+00:00"
+session.updated_at = "2020-01-02T04:05:06+00:00"
+session.status = 1
 session.save!
 
 session = Session.new
 session.start = "#{today + 3} 10:00:00 UTC +00:00".to_datetime
 session.end = "#{today + 3} 15:00:00 UTC +00:00".to_datetime
 session.trip_id = trip_id
-trip.created_at = "2020-01-02T04:05:06+00:00"
-trip.updated_at = "2020-01-02T04:05:06+00:00"
+session.created_at = "2020-01-02T04:05:06+00:00"
+session.updated_at = "2020-01-02T04:05:06+00:00"
+session.status = 1
 session.save!
 puts "Created three sessions for Trip_id: #{trip_id}"
 
