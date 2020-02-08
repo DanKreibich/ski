@@ -50,7 +50,7 @@ class TripsController < ApplicationController
         session = Session.new(trip_id: trip.id, start: start_datetime, end: start_datetime + 1.hour)
         session.save!
       end
-      redirect_to root_path
+      redirect_to user_path(@instructor)
     else
       flash[:notice] = "Couldn't be saved as some slot had been booked by another user in the meantime. Please load page again."
     end
