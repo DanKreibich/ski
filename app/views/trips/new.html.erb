@@ -38,21 +38,25 @@
         <div>
           <div class="booking-date-day">
             <div class="booking-date">
+              <p class="day-of-week"><%= booking_column_date.strftime('%B') %></p>
               <p class="date"><%= booking_column_date.day %></p>
               <p class="day-of-week"><%= booking_column_date.strftime('%A') %></p>
             </div>
             <!-- For each hour -->
+            <% booking_column_date_start_hour = booking_column_date + 9.hour %>
             <% for i in 0..6 %>
             <!-- Create an empty validation array where we will store true each time there is a match with existing sessions -->
               <% validation_array = [] %>
               <% if @booked_sessions.empty? %>
                 <% validation_array << false %>
               <% else %>
-                <% @booked_sessions[0].each do |session|%>
-                  <% if booking_column_date + i.hour == session.start %>
-                    <% validation_array << true %>
-                  <% else %>
-                    <% validation_array << false %>
+                <% @booked_sessions.each do |trip|%>
+                  <% trip.each do |trip_session| %>
+                    <% if booking_column_date_start_hour + i.hour == trip_session.start %>
+                      <% validation_array << true %>
+                    <% else %>
+                      <% validation_array << false %>
+                    <% end %>
                   <% end %>
                 <% end %>
               <% end %>
@@ -64,7 +68,7 @@
                   </div>
                 <% else %>
                   <div class="booking-slot-open">
-                    <%= s.radio_button "#{booking_column_date + i.hour}", "selected", checked: false, class: "input-checkbox d-hidden" %>
+                    <%= s.radio_button "#{booking_column_date_start_hour + i.hour}", "selected", checked: false, class: "input-checkbox d-hidden" %>
                   </div>
                 <% end %>
               <% end %>
