@@ -1,14 +1,14 @@
-<h1>edit.html.erb</h1>
+<div class="instructor-body">
+  <div class="avatar-extra-large" style="background-image: url(<%= @instructor.avatar %>)"></div>
+  <p>You are about to book lessons with</p>
+  <h1><%= @instructor.first_name %> <%= @instructor.last_name %></h1>
+  <div class="summary-description">
+    <h3>Booking Summary</h3>
+    <br>
+    <p>Number of hours: <%= @sessions.length %></p>
+    <p>Price: <%= @sessions.length * @instructor.hourly_rate %> EUR</p>
+    <br>
+    <%= link_to "Proceed to payment", user_trip_path(user_id: @instructor.id, id: @trip.id), method: :patch, class: "booking-btn" %>
+  </div>
+</div>
 
-<p>You are about to book lessons with <%= @instructor.first_name %></p>
-
-<p>Here is a summary of your sessions</p>
-<ul>
-  <% @sessions.each do |session| %>
-    <li>
-      <p><%=  session.start.to_date.strftime('%A') %>, <%=  session.start.to_date %> from <%=  session.start.strftime("%I:%M %P") %>  to <%= session.end.strftime("%I:%M %P") %></p>
-    </li>
-  <% end %>
-</ul>
-
-<%= link_to "Pay Now", user_trip_path(user_id: @instructor.id, id: @trip.id), method: :patch %>
