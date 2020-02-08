@@ -28,11 +28,11 @@ class TripsController < ApplicationController
     student = User.find(student_id)
     @trips = Trip.where(instructor_id: instructor_id)
 
-    booked_sessions = [] # for all trips that have been already booked by other users
+    @booked_sessions = [] # for all trips that have been already booked by other users
     booked_sessions_starts = [] # are all the start times of booked_sessions
 
     @trips.each do |trip|
-      booked_sessions += Session.where(trip_id: trip.id).to_a
+      booked_sessions = Session.where(trip_id: trip.id).to_a
       booked_sessions.each do |session|
         booked_sessions_starts << session.start
       end
