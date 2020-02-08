@@ -8,6 +8,8 @@ class UsersController < ApplicationController
       @instructors = @available_instructors
       # should actually return "empty state" screen: "no instructors available for your query"
     end
+    session[:start_date] = params[:start_date]
+    session[:end_date] = params[:end_date]
   end
 
   def show
@@ -15,6 +17,7 @@ class UsersController < ApplicationController
     @reviews = Review.where(instructor_id: @instructor.id)
     @photos = Photo.where(user_id: @instructor.id)
   end
+
 
   private
 
