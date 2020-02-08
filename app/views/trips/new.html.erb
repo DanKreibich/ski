@@ -45,11 +45,15 @@
             <% for i in 0..6 %>
             <!-- Create an empty validation array where we will store true each time there is a match with existing sessions -->
               <% validation_array = [] %>
-              <% @booked_sessions[0].each do |session|%>
-                <% if booking_column_date + i.hour == session.start %>
-                  <% validation_array << true %>
-                <% else %>
-                  <% validation_array << false %>
+              <% if @booked_sessions.nil? %>
+                <% validation_array << false %>
+              <% else %>
+                <% @booked_sessions[0].each do |session|%>
+                  <% if booking_column_date + i.hour == session.start %>
+                    <% validation_array << true %>
+                  <% else %>
+                    <% validation_array << false %>
+                  <% end %>
                 <% end %>
               <% end %>
                 <!-- Look up if the validations array contains at least one match. If yes, set class to booked -->
