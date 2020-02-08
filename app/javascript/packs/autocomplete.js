@@ -23,4 +23,4 @@ const autocompleteSearch = function() {
   }
 };
 
-export { autocompleteSearch };
+autocompleteSearch();
