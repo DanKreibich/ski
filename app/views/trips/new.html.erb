@@ -34,7 +34,7 @@
       <% counter = 0 %>
       <%= form_for(:trip, html: {class: "form-container"}, url: user_trips_path(@instructor), method: :post) do |f| %>
         <% while counter < 7 do %>
-        <% booking_column_date = "2020-01-29 09:00:00".to_datetime + counter %>
+        <% booking_column_date = session[:start_date].to_datetime + counter %>
         <div>
           <div class="booking-date-day">
             <div class="booking-date">
@@ -45,11 +45,15 @@
             <% for i in 0..6 %>
             <!-- Create an empty validation array where we will store true each time there is a match with existing sessions -->
               <% validation_array = [] %>
-              <% @booked_sessions[0].each do |session|%>
-                <% if booking_column_date + i.hour == session.start %>
-                  <% validation_array << true %>
-                <% else %>
-                  <% validation_array << false %>
+              <% if @booked_sessions.empty? %>
+                <% validation_array << false %>
+              <% else %>
+                <% @booked_sessions[0].each do |session|%>
+                  <% if booking_column_date + i.hour == session.start %>
+                    <% validation_array << true %>
+                  <% else %>
+                    <% validation_array << false %>
+                  <% end %>
                 <% end %>
               <% end %>
                 <!-- Look up if the validations array contains at least one match. If yes, set class to booked -->
