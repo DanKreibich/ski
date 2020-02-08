@@ -12,8 +12,12 @@ class TripsController < ApplicationController
   def create
     # the following list depicts what is expected to be received. Needs to be renamed ones real data comes
     selected_sessions_array = []
-    params[:trip][:sessions].each do |key|
-      selected_sessions_array << key[0].to_datetime
+    if params[:trip][:sessions].nil?
+      flash[:alert] = "Please select at least 1 hour"
+    else
+      params[:trip][:sessions].each do |key|
+        selected_sessions_array << key[0].to_datetime
+      end
     end
     # instructor_id should be passed in params
     instructor_id = params[:user_id].to_i
