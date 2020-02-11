@@ -6,7 +6,7 @@ bookingSlots.forEach(element => {
     console.log(checkbox);
     checkbox.checked = !checkbox.checked;
   })
-})
+});
 
 
 // // Grab pricing divs for dynamic price update
@@ -30,5 +30,19 @@ form.addEventListener("submit", (event) => {
   event.preventDefault();
   // Update hidden field with price and student_id (to check)
   form.submit();
-})
+});
 
+
+// Make full day button click/unclick all cells of a given day
+
+const fullDayButtons = document.querySelectorAll("[data-type='select-day']");
+
+fullDayButtons.forEach(button => {
+  button.addEventListener("click", () => {
+    var dayNumber = button.dataset.dayNumber;
+    var divsForDay = document.querySelectorAll(`div[data-day-number='${dayNumber}']`);
+    divsForDay.forEach(div => {
+      div.click();
+    })
+  })
+});
