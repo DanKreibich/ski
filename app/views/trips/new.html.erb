@@ -46,24 +46,8 @@
             <% booking_column_date_start_hour = booking_column_date + 9.hour %>
             <% for i in 0..6 %>
             <!-- Create an empty validation array where we will store true each time there is a match with existing sessions -->
-              <% validation_array = [] %>
-              <% if @booked_sessions.empty? %>
-                <% validation_array << false %>
-              <% else %>
-                <% @booked_sessions.each do |trip|%>
-                  <% trip.each do |trip_session| %>
-                    <% if booking_column_date_start_hour + i.hour == trip_session.start %>
-                      <% validation_array << true %>
-                    <% else %>
-                      <% validation_array << false %>
-                    <% end %>
-                  <% end %>
-                <% end %>
-              <% end %>
-                <!-- Look up if the validations array contains at least one match. If yes, set class to booked -->
               <%= f.fields_for :sessions do |s| %>
-                <% if validation_array.include? true %>
-
+                <% if @booked_slots.include? (booking_column_date_start_hour + i.hour) %>
                   <div class="booking-slot-booked">
                   </div>
                 <% else %>
