@@ -14,6 +14,7 @@
   width: 100%;
   display: flex;
   justify-content: space-around;
+  align-items: center;
   padding: 50px 0 40px 0;
 }
 .gender-sorting {
@@ -22,15 +23,28 @@
 .rating-sorting {
   display: flex;
 }
-.selector{
+.selector {
   font: forma-djr-display, sans-serif;
-  font-size: 20px;
+  font-size: 25px;
   font-weight: 500;
   color: $lightblue;
   cursor: pointer;
   padding-right: 40px;
   opacity: 0.3;
 }
+
+.star-selector {
+  font: forma-djr-display, sans-serif;
+  color: $lightblue;
+  cursor: pointer;
+  margin: 5px 0px 5px 0px;
+  padding-right: 20px;
+  opacity: 0.3;
+  img {
+    height: 30px;
+  }
+}
+
 .selector:last-child {
   padding-right: 0;
 }

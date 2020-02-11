@@ -57,7 +57,7 @@ rating1.onclick = function(){
 rating2.onclick = function(){
   clearPage();
   appendCards(arrayRating2);
-  rating1.classList.remove("selected");
+  rating1.classList.add("selected");
   rating2.classList.add("selected");
   rating3.classList.remove("selected");
   rating4.classList.remove("selected");
@@ -66,8 +66,8 @@ rating2.onclick = function(){
 rating3.onclick = function(){
   clearPage();
   appendCards(arrayRating3);
-  rating1.classList.remove("selected");
-  rating2.classList.remove("selected");
+  rating1.classList.add("selected");
+  rating2.classList.add("selected");
   rating3.classList.add("selected");
   rating4.classList.remove("selected");
   rating5.classList.remove("selected");
@@ -75,19 +75,19 @@ rating3.onclick = function(){
 rating4.onclick = function(){
   clearPage();
   appendCards(arrayRating4);
-  rating1.classList.remove("selected");
-  rating2.classList.remove("selected");
-  rating3.classList.remove("selected");
+  rating1.classList.add("selected");
+  rating2.classList.add("selected");
+  rating3.classList.add("selected");
   rating4.classList.add("selected");
   rating5.classList.remove("selected");
 }
 rating5.onclick = function(){
   clearPage();
   appendCards(arrayRating5);
-  rating1.classList.remove("selected");
-  rating2.classList.remove("selected");
-  rating3.classList.remove("selected");
-  rating4.classList.remove("selected");
+  rating1.classList.add("selected");
+  rating2.classList.add("selected");
+  rating3.classList.add("selected");
+  rating4.classList.add("selected");
   rating5.classList.add("selected");
 }
 
