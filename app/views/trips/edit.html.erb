@@ -8,7 +8,7 @@
     <p>Number of hours: <%= @sessions.length %></p>
     <p>Price: <%= @sessions.length * @instructor.hourly_rate %> EUR</p>
     <br>
-    <%= link_to "Proceed to payment", user_trip_path(user_id: @instructor.id, id: @trip.id), method: :patch, class: "booking-btn" %>
+    <%= link_to "Proceed to payment", user_trip_path(user_id: @instructor.id, id: @trip.id), method: :patch, class: "blue-btn" %>
   </div>
 </div>
 

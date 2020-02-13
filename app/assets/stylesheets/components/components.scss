@@ -127,3 +127,20 @@ a:hover {
   text-align: center;
 }
 
+
+.resort-card {
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 0px 20px $shadow-color;
+  border-radius: 15px;
+  margin: 0 80px 80px 0;
+  img {
+    height: 300px;
+    width: 300px;
+    border-radius: 15px 15px 0px 0px;
+  }
+}
+.resort-card:hover {
+  box-shadow: 0px 0px 50px $shadow-color;
+}
+
