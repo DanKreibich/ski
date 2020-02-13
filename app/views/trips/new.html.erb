@@ -1,4 +1,4 @@
-<div class="wrapper">
+  <div class="wrapper">
   <div class="user-booking-info">
     <div class="booking-photo-name">
       <%= image_tag ("#{@instructor.avatar}"), with: "25px;", height: "25px;", class: "booking-instructor-photo" %>
@@ -48,17 +48,19 @@
             <!-- Create an empty validation array where we will store true each time there is a match with existing sessions -->
               <%= f.fields_for :sessions do |s| %>
                 <% if @booked_slots.include? (booking_column_date_start_hour + i.hour) %>
-                  <div class="booking-slot-booked">
+                  <div class="booking-slot-booked" data-day-number= "<%= counter + 1 %>">
                   </div>
                 <% else %>
-                  <div class="booking-slot-open">
+                  <div class="booking-slot-open" data-day-number= "<%= counter + 1 %>">
                     <%= s.radio_button "#{booking_column_date_start_hour + i.hour}", "selected", checked: false, class: "input-checkbox d-hidden" %>
                   </div>
                 <% end %>
               <% end %>
             <% end %>
           </div>
+          <button type="button" data-type="select-day" data-day-number= "<%= counter + 1 %>">Full day</button>
         </div>
+
         <% counter += 1 %>
         <% end %>
         <!-- Passing current user in the params -->

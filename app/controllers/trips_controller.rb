@@ -24,10 +24,6 @@ class TripsController < ApplicationController
       end
     end
 
-    # @instructor = User.find(instructor_id)
-    # student = User.find(student_id)
-    # @trips = Trip.where(instructor_id: instructor_id)
-
     # Check there are no booking overlaps and create a trip + sessions if test is successful
     if confirm_no_booking_overlaps(selected_slots, booked_slots)
       trip = Trip.new(instructor_id: instructor_id, student_id: student_id)
