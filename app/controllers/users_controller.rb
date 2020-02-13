@@ -3,14 +3,19 @@ class UsersController < ApplicationController
     # Add correct db search or add gem
     search
     @instructors = @available_instructors
+    @instructors.each do |instructor|
+      instructor.ratings_average = calculate_average(instructor)
+      instructor.save
+    end
     session[:start_date] = params[:start_date]
     session[:end_date] = params[:end_date]
   end
 
   def show
     @instructor = User.find(params[:id])
-    @reviews = Review.where(instructor_id: @instructor.id)
-    @photos = Photo.where(user_id: @instructor.id)
+    get_instructor_reviews(@instructor)
+    get_instructor_photos(@instructor)
+    set_rating_average(@reviews)
   end
 
 
@@ -32,5 +37,22 @@ class UsersController < ApplicationController
     end
     local_instructors = User.all.where(role: 1, resort: params[:location]) # all instructors in the requested location
     @available_instructors = local_instructors.reject { |instructor| booked_instructor_ids.include? instructor.id } # all instructors minus booked instructors
+  end
+
+  def get_instructor_reviews(instructor)
+    @reviews = Review.where(instructor_id: instructor.id)
+  end
+
+  def get_instructor_photos(instructor)
+     @photos = Photo.where(user_id: instructor.id)
+  end
+
+  def set_rating_average(reviews)
+    @rating_average = reviews.sum(:rating) / reviews.count.to_f
+  end
+
+  def calculate_average(instructor)
+    reviews = get_instructor_reviews(instructor)
+    set_rating_average(reviews)
   end
 end
