@@ -3,14 +3,19 @@ class OrdersController < ApplicationController
   def create
 
     instructor = User.find(params[:instructor_id])
-
-    order = Order.create!(instructor: instructor, amount: instructor.hourly_rate, state: 'pending', student: current_user)
+    order = Order.create!(
+      instructor: instructor,
+      amount: params[:amount].to_i,
+      state: 'pending',
+      student: current_user,
+      trip_id: params[:trip_id]
+    )
 
     session = Stripe::Checkout::Session.create(
       payment_method_types: ['card'],
       line_items: [{
-        name: "#{instructor.first_name},#{Date.today}",
-        amount: instructor.hourly_rate_cents,
+        name: "#{instructor.first_name} - #{DateTime.now}",
+        amount: params[:amount].to_i * 100,
         currency: 'eur',
         quantity: 1
       }],
@@ -19,9 +24,22 @@ class OrdersController < ApplicationController
     )
 
     order.update(checkout_session_id: session.id)
-    redirect_to new_order_payment_path(order)
-    end
-end
 
-# teddy = Teddy.find(params[:teddy_id])
-# order  = Order.create!(teddy: teddy, teddy_sku: teddy.sku, amount: teddy.price, state: 'pending', user: current_user)
+    # updating the Trip status
+    trip = Trip.find(params[:trip_id])
+    trip.status = 1
+    trip.save
+    sessions = Session.where(trip_id: trip.id)
+    sessions.each do |session|
+      session.status = 1
+      session.save
+    end
+    redirect_to new_order_payment_path(order)
+  end
+
+  def show
+    # @order = current_user.orders.find(params[:id])
+    @order = Order.find(params[:id])
+  end
+
+end

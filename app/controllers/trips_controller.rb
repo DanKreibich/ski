@@ -44,6 +44,7 @@ class TripsController < ApplicationController
     @instructor = User.find(params[:user_id])
     @trip = Trip.find(params[:id])
     @sessions = Session.where(trip_id: @trip.id)
+    @amount = @sessions.length * @instructor.hourly_rate
   end
 
   def update

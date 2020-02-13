@@ -13,6 +13,8 @@
     <!-- Instead of regular button, a form is needed to start the payment process -->
     <%= form_tag orders_path do %>
       <%= hidden_field_tag 'instructor_id', @instructor.id %>
+      <%= hidden_field_tag 'trip_id', @trip.id %>
+      <%= hidden_field_tag 'amount', @amount %>
       <%= submit_tag 'Purchase', class: 'btn btn-primary' %>
     <% end %>
 

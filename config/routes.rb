@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  mount StripeEvent::Engine, at: '/stripe-webhooks'
+
   get 'reviews/index'
   get 'reviews/new'
   get 'reviews/create'
@@ -16,7 +18,9 @@ Rails.application.routes.draw do
     resources  :trips, only: [:create, :edit, :update]
   end
 
-  resources :orders, only: [:show, :create]
+  resources :orders, only: [:show, :create] do
+    resources :payments, only: :new
+  end
 
   root to: 'pages#home'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
