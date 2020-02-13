@@ -22,13 +22,14 @@
   <div class="booking-table-container">
     <div class="booking-table">
       <div class="hour-block">
-        <p>09:00-10:00</p>
-        <p>10:00-11:00</p>
-        <p>11:00-12:00</p>
-        <p>12:00-13:00</p>
-        <p>13:00-14:00</p>
-        <p>14:00-15:00</p>
-        <p>15:00-16:00</p>
+        <p class="hour-slot">9 AM</p>
+        <p class="hour-slot">10 AM</p>
+        <p class="hour-slot">11 AM</p>
+        <p class="hour-slot">12 PM</p>
+        <p class="hour-slot">1 PM</p>
+        <p class="hour-slot">2 PM</p>
+        <p class="hour-slot">3 PM</p>
+        <p class="hour-slot">4 PM</p>
       </div>
     <!-- For each day, print the headers date and day of the week -->
       <% counter = 0 %>
@@ -38,9 +39,8 @@
         <div>
           <div class="booking-date-day">
             <div class="booking-date">
-              <p class="day-of-week"><%= booking_column_date.strftime('%B') %></p>
+              <p class="day-of-week"><%= booking_column_date.strftime('%a') %></p>
               <p class="date"><%= booking_column_date.day %></p>
-              <p class="day-of-week"><%= booking_column_date.strftime('%A') %></p>
             </div>
             <!-- For each hour -->
             <% booking_column_date_start_hour = booking_column_date + 9.hour %>
@@ -58,7 +58,7 @@
               <% end %>
             <% end %>
           </div>
-          <button type="button" data-type="select-day" data-day-number= "<%= counter + 1 %>">Full day</button>
+          <button class="full-day-button" type="button" data-type="select-day" data-day-number= "<%= counter + 1 %>">All</button>
         </div>
 
         <% counter += 1 %>

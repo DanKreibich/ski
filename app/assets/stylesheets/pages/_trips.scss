@@ -70,54 +70,69 @@
   box-shadow: 0px 0px 20px $shadow-color;
   border-radius: 20px;
 }
+
 .hour-block {
-  padding-top: 43px;
+  padding-top: 58px;
   color: $blue;
   p {
-    padding: 28px 30px 0 0;
+    padding: 27px 30px 0 0;
     font-size: 15px;
     margin: 0;
   }
 }
+
+.hour-slot {
+  text-align: right;
+}
+
+.full-day-button {
+  height: 40px;
+  width: 80px;
+  border-radius: 10px;
+  color: $white;
+  border-color: $blue;
+  background-color: $blue;
+  opacity: 0.3;
+  margin-top: 12px;
+}
+
+
 .booking-date {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 .date {
-  font-size: 20px;
+  font-size: 40px;
   margin: 0;
   color: $blue;
+  padding-bottom: 20px;
 }
 .day-of-week {
   font-size: 15px;
   color: #000AFF;
-
   margin: 0;
-  padding-bottom: 10px;
 }
 
 .booking-slot-open {
   height: 40px;
   width: 80px;
-  border-radius: 10px;
+  border-radius: 30px;
   background-color: $blue;
   opacity: 0.3;
   margin-bottom: 10px;
 }
-
 
 .selected {
   opacity: 1;
   cursor: default;
 }
 
-
 .booking-slot-booked {
   height: 40px;
   width: 80px;
-  border-radius: 10px;
-  background-color: $gray;
+  border-radius: 30px;
+  background-color: #9B9B9B;
   opacity: 0.3;
   margin-bottom: 10px;
 }

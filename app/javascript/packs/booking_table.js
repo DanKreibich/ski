@@ -39,6 +39,7 @@ const fullDayButtons = document.querySelectorAll("[data-type='select-day']");
 
 fullDayButtons.forEach(button => {
   button.addEventListener("click", () => {
+    button.classList.toggle("selected");
     var dayNumber = button.dataset.dayNumber;
     var divsForDay = document.querySelectorAll(`div[data-day-number='${dayNumber}']`);
     divsForDay.forEach(div => {
