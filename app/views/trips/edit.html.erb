@@ -9,6 +9,13 @@
     <p>Price: <%= @sessions.length * @instructor.hourly_rate %> EUR</p>
     <br>
     <%= link_to "Proceed to payment", user_trip_path(user_id: @instructor.id, id: @trip.id), method: :patch, class: "booking-btn" %>
+
+    <!-- Instead of regular button, a form is needed to start the payment process -->
+    <%= form_tag orders_path do %>
+      <%= hidden_field_tag 'instructor_id', @instructor.id %>
+      <%= submit_tag 'Purchase', class: 'btn btn-primary' %>
+    <% end %>
+
   </div>
 </div>
 
