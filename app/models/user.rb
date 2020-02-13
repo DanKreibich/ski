@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :trips
-  has_many :reviews
+  has_many :reviews, foreign_key: "instructor_id"
 
   # At the moment "role" validation is creating a error when we sign_up a user
   # validates :role, presence: true

@@ -4,8 +4,7 @@ class UsersController < ApplicationController
     search
     @instructors = @available_instructors
     @instructors.each do |instructor|
-      instructor.ratings_average = calculate_average(instructor)
-      instructor.save
+     set_ratings_average(instructor)
     end
     session[:start_date] = params[:start_date]
     session[:end_date] = params[:end_date]
@@ -15,7 +14,7 @@ class UsersController < ApplicationController
     @instructor = User.find(params[:id])
     get_instructor_reviews(@instructor)
     get_instructor_photos(@instructor)
-    set_rating_average(@reviews)
+    set_ratings_average(@instructor)
   end
 
 
@@ -47,12 +46,12 @@ class UsersController < ApplicationController
      @photos = Photo.where(user_id: instructor.id)
   end
 
-  def set_rating_average(reviews)
-    @rating_average = reviews.sum(:rating) / reviews.count.to_f
-  end
-
-  def calculate_average(instructor)
-    reviews = get_instructor_reviews(instructor)
-    set_rating_average(reviews)
+  def set_ratings_average(instructor)
+    if instructor.reviews.count == 0
+      instructor.ratings_average = 0
+    else
+      instructor.ratings_average = '%.1f' % instructor.count_ratings_average
+    end
+    instructor.save
   end
 end
