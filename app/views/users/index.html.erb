@@ -21,7 +21,6 @@
   </div>
   </div>
 </div>
-
 <% if @instructors.empty? %>
   <%= render 'shared/empty_state' %>
 <% else %>
@@ -36,7 +35,7 @@
                 <p class="name-and-price"><%= instructor.first_name %></p>
                 <p class="resort-and-price"><%= instructor.resort %></p>
                 <!-- to think how to show reiting in here(just a example text right now) -->
-                <p class="rating"><%= image_tag("rating.svg") %> 4.4</p>
+                <p class="rating"><%= image_tag("rating.svg") %> <%= instructor.ratings_average %> </p>
               </div>
               <div class="instructor-info-price">
                 <p class="name-and-price"> €<%= instructor.hourly_rate %></p>

@@ -5,7 +5,11 @@ import "flatpickr/dist/flatpickr.min.css";
 const datePickerHelper = {
   init: function() {
     //added altInput to show date in better format
-    flatpickr(".datepicker", {allowInput: true, altInput: true});
+    flatpickr(".datepicker", {
+      allowInput: true,
+      minDate: new Date(),
+      altInput: true
+    });
     const datefields = document.querySelectorAll(".datepicker");
     datefields.forEach(datefield => datefield.onpress = () => false);
   }

@@ -18,10 +18,10 @@
       <%= render 'shared/navbar_index' %>
     <% end %>
     <!-- This p tag with calss notice is creating a 15px gap between divs (do we need it?) -->
-    <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= yield %>
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
+    <p class="notice"><%= notice %></p>
   </body>
 </html>
