@@ -8,7 +8,7 @@
     </div>
   <% end %>
 <% else %>
-  <%= form_tag users_path, method: :get, class: "search-form-home-page" do%>
+  <%= form_tag users_path, method: :get, class: "search-form-home-page search-form-padding" do%>
     <div id= "search-data" data-resorts="<%= @resorts.to_json %>">
       <%= text_field_tag 'location', params[:location], autocomplete: :off, placeholder: 'Choose your location', class: 'input-form', required: true %>
       <%= date_field_tag 'start_date', params[:start_date], autocomplete: :off, as: :string, placeholder: "From", class: "input-form datepicker", required: true %>
