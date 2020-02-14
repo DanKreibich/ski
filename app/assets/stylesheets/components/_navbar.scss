@@ -62,4 +62,9 @@
  border-bottom: 6px solid rgba(255,255,255, 1);
 }
 
-
+@media(max-width: 1281px){
+  .navigation-element {
+    font-size: 15px;
+    padding-right: 26px;
+  }
+}
