@@ -78,9 +78,9 @@ a:hover {
   justify-content: space-between;
 }
 .review-card{
-  background: #FFFFFF 0% 0% no-repeat padding-box;
+  background: #FFFFFF ;
   box-shadow: 0px 0px 20px #00000026;
-  border-radius: 20px;
+  border-radius: 10px;
   opacity: 1;
   width: 48%;
   margin-bottom: 40px;
@@ -170,6 +170,23 @@ a:hover {
   }
   .resort-and-price {
     font-size: 10px;
+  }
+  .review-card{
+    border-radius: 5px;
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 13px 18px;
+  }
+  .review-name{
+    font-size: 20px;
+    margin: 0;
+  }
+  .rating {
+    font-size: 20px !important;
+  }
+  .review-body{
+    font-size: 15px;
+    margin: 0;
   }
 }
 

@@ -3,9 +3,9 @@
     <div class="name-block">
       <div class="avatar-large" style="background-image: url(<%= @instructor.avatar %>)"></div>
       <div>
-        <h1><%= @instructor.first_name %> <%= @instructor.last_name %></h1>
-         <h3><%= image_tag("rating.svg") %> <%= @instructor.ratings_average %></h3>
-        <h3><%= @instructor.hourly_rate %> € per hour</h3>
+        <h1 class="instructor-name"><%= @instructor.first_name %> <%= @instructor.last_name %></h1>
+        <p class="price-hour"><%= @instructor.hourly_rate %> € per hour</p>
+        <p class="instructor-rating"><%= image_tag "rating.svg", class: "rating-star" %> <%= @instructor.ratings_average %></p>
       </div>
     </div>
     <%= link_to "Book a lesson", new_trip_path(@instructor), method: :get, class: "booking-btn" %>
@@ -15,29 +15,29 @@
 <div class="instructor-body">
   <!-- <div class="avatar-extra-large" style="background-image: url(<%= @instructor.avatar %>)"></div> -->
   <!-- <h1><%= @instructor.first_name %> <%= @instructor.last_name %></h1> -->
-  <h3>Resort: <%= @instructor.resort %></h3>
+  <h3 class="font-size">Resort: <%= @instructor.resort %></h3>
   <div class="instructor-description">
     <p>Description: <%= @instructor.description %></p>
 
   </div>
 
-  <h1 class="blue-font">Photos</h1>
+  <h1 class="blue-font font-size">Photos</h1>
   <div class="photo-area">
     <% @photos.each do |photo| %>
       <%= image_tag ("#{photo.url}") %>
     <% end %>
   </div>
 
-  <h1 class="blue-font">Reviews</h1>
+  <h1 class="blue-font font-size">Reviews</h1>
   <div class="review-container">
     <!-- creates for each review a separate box -->
     <% @reviews.each do |review|  %>
       <div class="review-card">
         <div class="review-info">
-          <p class="blue-font"><%= review.student.first_name %></p>
+          <p class="blue-font review-name"><%= review.student.first_name %></p>
           <p class="rating"><%= image_tag("rating.svg") %> <%= review.rating %></p>
         </div>
-        <p><%= review.description %></p>
+        <p class="review-body"><%= review.description %></p>
       </div>
     <% end %>
   </div>
