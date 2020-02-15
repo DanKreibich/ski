@@ -105,6 +105,7 @@ a:hover {
   font-size: 24px;
   margin: 0;
   color: $blue;
+  padding-top: 5px;
   img {
     width: 24px;
     height: 24px;
@@ -141,6 +142,34 @@ a:hover {
     background-color: $white;
     box-shadow: 0px 0px 20px $shadow-color;
     border-radius: 5px;
+  }
+  .instructor-card {
+    flex-direction: column;
+    box-shadow: 0px 0px 20px $shadow-color;
+    border-radius: 15px;
+    margin: 30px 0;
+    img {
+      height: 250px;
+      width: 250px;
+      border-radius: 10px 10px 0px 0px;
+    }
+  }
+  .instructor-info {
+    padding: 10px;
+  }
+  .rating {
+    font-size: 14px;
+    img {
+      width: 15px;
+      height: 15px;
+      padding-right: 6px;
+    }
+  }
+  .name-and-price {
+    font-size: 20px;
+  }
+  .resort-and-price {
+    font-size: 10px;
   }
 }
 

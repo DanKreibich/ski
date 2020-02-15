@@ -113,7 +113,7 @@
     padding-top: 10px;
   }
   .search-form-home-page {
-    padding-top: 15px;
+    padding-top: 0;
     input {
       font-size: 15px;
       padding: 10px 20px;
@@ -124,12 +124,12 @@
     input:last-child {
       font-size: 15px;
       padding: 5px 20px;
-      
       width: 125px;
-      box-shadow: 0px 0px 20px $shadow-color;
       border-radius: 10px;
-      border: none;
       border-radius: 5px;
     }
+  }
+  .search-form-padding{
+    padding-top:25px;
   }
 }
