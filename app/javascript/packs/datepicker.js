@@ -8,7 +8,7 @@ const datePickerHelper = {
     flatpickr(".datepicker", {
       allowInput: true,
       minDate: new Date(),
-      altInput: true
+      dateFormat: "F, J Y",
     });
     const datefields = document.querySelectorAll(".datepicker");
     datefields.forEach(datefield => datefield.onpress = () => false);
