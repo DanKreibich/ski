@@ -1,11 +1,52 @@
 <div class="home-wrapper">
   <div class="home-background"></div>
   <%= render 'shared/navbar' %>
-  <div class="my-container">
-    <h1 class="home-h1">find the best ski instructor</h1>
+  <div class="first-container">
+    <h1 class="home-h1">🎿 Ski lessons made simple.</h1>
     <%= render 'shared/search' %>
   </div>
 </div>
+
+<div class="second-container">
+  <h1 class="value-prop-title">Book top teachers. ⛷️ Pay a fraction of the price. 💸</h1>
+  <div class="value-prop-container">
+    <div class="value-prop">
+      <%= image_tag "Flexible_booking.png", height: '150', width: '150'%>
+      <h2>Flexible booking</h2>
+      <p>Book online in just a few clicks.</p>
+    </div>
+    <div class="value-prop">
+      <%= image_tag "Low_prices.png", height: '150', width: '150'%>
+      <h2>Low prices</h2>
+      <p>Book instructors directly. No middleman.</p>
+    </div>
+    <div class="value-prop">
+      <%= image_tag "Largest_choice.png", height: '150', width: '150'%>
+      <h2>Largest choice</h2>
+      <p>Instructors for all levels are available in resorts all across Europe.</p>
+    </div>
+  </div>
+</div>
+
+
+<div class="third-container">
+  <h1 class="value-prop-title">Available everywhere where there is snow. ❄️</h1>
+  <div class="value-prop-container">
+    <div class="resort-card">
+      <%= image_tag "Kitzbuehel.jpg", height: '150', width: '150'%>
+      <p>Kitzbuehel</p>
+    </div>
+    <div class="resort-card">
+      <%= image_tag "Kitzbuehel.jpg", height: '150', width: '150'%>
+      <p>Kitzbuehel</p>
+    </div>
+    <div class="resort-card">
+      <%= image_tag "Kitzbuehel.jpg", height: '150', width: '150'%>
+      <p>Kitzbuehel</p>
+    </div>
+  </div>
+</div>
+
 
 <%= javascript_pack_tag 'blur_effect_home' %>
 <%= javascript_pack_tag 'autocomplete' %>
