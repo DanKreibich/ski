@@ -188,3 +188,34 @@ a:hover {
 .resort-card:hover {
   box-shadow: 0px 0px 50px $shadow-color;
 }
+.checkout-card{
+  background: #FFFFFF 0% 0% no-repeat padding-box;
+  box-shadow: 0px 0px 20px #00000026;
+  border-radius: 20px;
+  opacity: 1;
+  width: 64%;
+  margin-bottom: 40px;
+  padding: 16px 24px;
+  text-align: justify;
+  display: flex;
+  flex-direction: column;
+  .background{
+    height: 240px;
+    border-radius: 20px;
+    width: 90%;
+    background-size: cover;
+    margin: 0px auto;
+    filter: brightness(100%);
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+  }
+}
+.checkout-background{
+  background-image: url('https://source.unsplash.com/1600x900/?portrait,winter');
+  height: 100% !important;
+}
+.cheeckout-heading{
+  margin: 0px auto;
+  text-align: center;
+}
