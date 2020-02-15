@@ -8,9 +8,7 @@
         <%= link_to "Male", users_path, method: :get, class: "selector", id: "male", remote: true %>
         <%= link_to "Female", users_path, method: :get, class: "selector", id: "female", remote: true %>
       </div>
-      <div class="price-sorting">
-        <p>it's gonna be a price sorting here</p>
-      </div>
+      <div id="singleSlider"></div>
       <div class="rating-sorting">
         <p class="star-selector" id="rating-1"><%= image_tag ("rating.svg") %></p>
         <p class="star-selector" id="rating-2"><%= image_tag ("rating.svg") %></p>
@@ -54,4 +52,5 @@
 <%= javascript_pack_tag 'select_rating' %>
 <%= javascript_pack_tag 'autocomplete' %>
 <%= javascript_pack_tag 'datepicker' %>
+<%= javascript_pack_tag 'price_filter' %>
 

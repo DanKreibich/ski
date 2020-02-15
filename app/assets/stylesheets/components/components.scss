@@ -23,7 +23,7 @@ a:hover {
   padding: 10px 40px;
   background-color: $blue;
   box-shadow: 0px 0px 20px $shadow-color;
-  border-radius: 20px;
+  border-radius: 10px;
   border: none;
   color: white;
   height: 56px;
@@ -42,7 +42,7 @@ a:hover {
   padding: 10px 40px;
   background-color: $white;
   box-shadow: 0px 0px 20px $shadow-color;
-  border-radius: 20px;
+  border-radius: 10px;
   border: none;
   color: $blue;
 }
@@ -105,6 +105,7 @@ a:hover {
   font-size: 24px;
   margin: 0;
   color: $blue;
+  padding-top: 5px;
   img {
     width: 24px;
     height: 24px;
@@ -128,6 +129,50 @@ a:hover {
   text-align: center;
 }
 
+@media(max-width: 1281px){
+  .blue-btn {
+  height: 45px;
+  border-radius: 5px;
+  }
+  .logo {
+    font-size: 40px;
+    padding-left: 35px;
+  }
+  .white-btn {
+    padding: 10px 35px;
+    background-color: $white;
+    box-shadow: 0px 0px 20px $shadow-color;
+    border-radius: 5px;
+  }
+  .instructor-card {
+    flex-direction: column;
+    box-shadow: 0px 0px 20px $shadow-color;
+    border-radius: 15px;
+    margin: 30px 0;
+    img {
+      height: 250px;
+      width: 250px;
+      border-radius: 10px 10px 0px 0px;
+    }
+  }
+  .instructor-info {
+    padding: 10px;
+  }
+  .rating {
+    font-size: 14px;
+    img {
+      width: 15px;
+      height: 15px;
+      padding-right: 6px;
+    }
+  }
+  .name-and-price {
+    font-size: 20px;
+  }
+  .resort-and-price {
+    font-size: 10px;
+  }
+}
 
 .resort-card {
   display: flex;
@@ -146,4 +191,3 @@ a:hover {
 .resort-card:hover {
   box-shadow: 0px 0px 50px $shadow-color;
 }
-
