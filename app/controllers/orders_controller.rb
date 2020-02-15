@@ -14,15 +14,16 @@ class OrdersController < ApplicationController
     session = Stripe::Checkout::Session.create(
       payment_method_types: ['card'],
       line_items: [{
-        name: "#{instructor.first_name} - #{DateTime.now}",
+        name: "Your ski lessons with #{instructor.first_name}",
         amount: params[:amount].to_i * 100,
+        images: [instructor.avatar],
         currency: 'eur',
         quantity: 1
       }],
       success_url: order_url(order),
       cancel_url: order_url(order)
     )
-
+    # if success, then order.status = 'success'
     order.update(checkout_session_id: session.id)
 
     # updating the Trip status
