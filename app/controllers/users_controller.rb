@@ -61,6 +61,6 @@ class UsersController < ApplicationController
 
   def change_date_format(date)
     to_date = date.to_date
-    new_format = to_date.strftime("%d-%m-%Y")
+    # new_format = to_date.strftime("%d-%m-%Y")
   end
 end

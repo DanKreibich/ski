@@ -19,6 +19,7 @@
 .gender-sorting {
   display: flex;
 }
+
 .rating-sorting {
   display: flex;
 }
@@ -99,6 +100,6 @@
     justify-content: space-around;
   }
   .instructor-card:nth-child(4n+4) {
-    margin: 30px 0;
+    margin: 20px 20px;
   }
 }
