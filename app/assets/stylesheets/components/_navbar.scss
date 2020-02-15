@@ -67,4 +67,14 @@
     font-size: 15px;
     padding-right: 26px;
   }
+  .booking-central-section {
+    padding-left: 15%;
+  }
+  .nav-element-booking-step {
+    font-size: 18px;
+    padding: 10px 40px;
+  }
+  .nav-element-booking-step:first-child {
+   border-bottom: 4px solid rgba(255,255,255, 1);
+  }
 }

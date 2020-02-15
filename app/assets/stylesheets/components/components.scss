@@ -160,8 +160,8 @@ a:hover {
   .rating {
     font-size: 14px;
     img {
-      width: 15px;
-      height: 15px;
+      width: 24px;
+      height: 19px;
       padding-right: 6px;
     }
   }
@@ -181,8 +181,12 @@ a:hover {
     font-size: 20px;
     margin: 0;
   }
-  .rating {
-    font-size: 20px !important;
+  .rating-review {
+    font-size: 20px;
+    color: blue;
+    img {
+      margin-top:-5px;
+    }
   }
   .review-body{
     font-size: 15px;

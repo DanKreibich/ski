@@ -17,7 +17,7 @@
   height: 87px;
   width: 87px;
 
-  background-position: cover;
+  object-fit: cover;
 }
 .booking-instructor-block {
   padding-left: 20px;
@@ -43,8 +43,6 @@
 }
 .multiply-price-block {
   display: flex;
-}
-.multiply-price-block {
   font-size: 30px;
   margin: 0;
   margin-top: -15px;
@@ -176,4 +174,77 @@
 }
 .input-checkbox {
   display: none;
+}
+
+@media(max-width: 1281px){
+  .user-booking-info {
+    width: 60%;
+    padding: 20px 0;
+    align-items: center;
+  }
+  .booking-instructor-name {
+    font-size: 20px;
+  }
+  .booking-instructor-resort {
+    font-size: 15px;
+    margin-top: 0;
+  }
+  .booking-total-price {
+    font-size: 20px;
+  }
+  .multiply-price-block {
+    font-size: 15px;
+    margin: 0;
+    p {
+      margin: 0;
+    }
+  }
+  .booking-instructor-photo{
+    height: 60px;
+    width: 60px;
+  }
+  .date {
+    font-size: 20px;
+    margin: 0;
+    color: $blue;
+    padding-bottom: 10px;
+  }
+  .booking-slot-open {
+    height: 30px;
+    width: 60px;
+    border-radius: 10px;
+    margin-bottom: 5px;
+  }
+  .booking-slot-booked {
+    height: 30px;
+    width: 60px;
+    border-radius: 10px;
+    margin-bottom: 5px;
+  }
+  .full-day-button {
+    height: 30px;
+    width: 60px;
+    margin-top: 12px;
+    border-radius: 5px;
+  }
+  .hour-block {
+    padding-top: 40px;
+    p {
+      padding: 15px 30px 0 0;
+      font-size: 13px;
+    }
+  }
+  .btn {
+    border-radius: 5px;
+    padding: 7px 30px;
+    font-size: 15px;
+    font-size: 15px;
+  }
+  .booking-table {
+    margin-bottom: 20px;
+    border-radius: 10px;
+  }
+  .booking-date-day {
+    padding-right: 10px;
+  }
 }
