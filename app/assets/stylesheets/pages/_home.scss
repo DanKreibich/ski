@@ -54,20 +54,31 @@
   width: 70%;
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
+  .child {
+  flex-basis: 33%;
+  }
 }
 
 .value-prop {
   width: 30%;
   text-align: center;
+  h2 {
+    font-weight: bold;
+  }
+  p {
+    font-size: 20px;
+    font-family: $headers-font;
+  }
   img {
     margin-bottom: 20px;
   }
 }
 
 .value-prop-title {
+  font-weight: bold;
   font-size: 60px;
-  margin-top: 120px;
-  margin-bottom: 180px;
+  margin-bottom: 120px;
 }
 
 
