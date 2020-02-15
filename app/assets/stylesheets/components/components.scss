@@ -122,6 +122,7 @@ a:hover {
   width: 500px;
   justify-content: center;
 }
+
 .summary-description{
   padding-top: 48px;
   padding-bottom: 80px;
@@ -175,16 +176,24 @@ a:hover {
 
 .resort-card {
   display: flex;
+  justify-content: center;
+  align-items: center;
   flex-direction: column;
   box-shadow: 0px 0px 20px $shadow-color;
   border-radius: 15px;
   margin: 0 80px 80px 0;
-  img {
-    height: 300px;
-    width: 300px;
-    border-radius: 15px 15px 0px 0px;
-  }
+  height: 250px;
+  width: 250px;
+  background-size: cover;
+  background-size: center;
 }
+.resort-name {
+  font-size: 25px;
+  color: $white;
+}
+
+
+
 .resort-card:hover {
   box-shadow: 0px 0px 50px $shadow-color;
 }
