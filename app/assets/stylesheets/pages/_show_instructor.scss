@@ -135,4 +135,13 @@
     font-size: 20px;
     margin: 0;
   }
+
+.checkout-body{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 56%;
+  margin: auto;
+  padding-top: 72px;
 }
