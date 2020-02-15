@@ -43,7 +43,12 @@ fullDayButtons.forEach(button => {
     var dayNumber = button.dataset.dayNumber;
     var divsForDay = document.querySelectorAll(`div[data-day-number='${dayNumber}']`);
     divsForDay.forEach(div => {
-      div.click();
+      if (!div.classList.contains('selected')){
+        div.click()
+      } else  {
+        // div.click()
+      }
     })
   })
 });
+
