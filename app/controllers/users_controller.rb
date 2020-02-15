@@ -19,7 +19,6 @@ class UsersController < ApplicationController
     set_ratings_average(@instructor)
   end
 
-
   private
 
   def search
