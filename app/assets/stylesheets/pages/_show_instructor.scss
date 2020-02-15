@@ -47,6 +47,7 @@
     padding-bottom: 24px;
   }
 }
+
 .booking-btn {
   color: $white;
   font-size: 20px;
@@ -54,7 +55,7 @@
   padding: 13px 25px;
   background-color: $blue;
   box-shadow: 0px 0px 20px $shadow-color;
-  border-radius: 20px;
+  border-radius: 10px;
 }
 
 .booking-btn:hover {

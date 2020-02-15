@@ -4,6 +4,7 @@ import "flatpickr/dist/flatpickr.min.css";
 //Best practice: done this way to avoid overwrting from other javascript files
 const datePickerHelper = {
   init: function() {
+    //added altInput to show date in better format
     flatpickr(".datepicker", {
       allowInput: true,
       minDate: new Date(),
