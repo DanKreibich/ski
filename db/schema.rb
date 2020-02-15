@@ -10,10 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_13_163253) do
+
+ActiveRecord::Schema.define(version: 2020_02_13_195236) do
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "orders", force: :cascade do |t|
+    t.string "state"
+    t.string "user_sku"
+    t.integer "amount_cents", default: 0, null: false
+    t.string "checkout_session_id"
+    t.bigint "instructor_id"
+    t.bigint "student_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "trip_id"
+    t.index ["instructor_id"], name: "index_orders_on_instructor_id"
+    t.index ["student_id"], name: "index_orders_on_student_id"
+    t.index ["trip_id"], name: "index_orders_on_trip_id"
+  end
 
   create_table "photos", force: :cascade do |t|
     t.string "url"
@@ -71,18 +88,20 @@ ActiveRecord::Schema.define(version: 2020_02_13_163253) do
     t.text "description"
     t.integer "min_booking_hours"
     t.integer "level"
-    t.integer "hourly_rate"
     t.integer "day_rate"
     t.string "resort"
     t.string "avatar"
     t.integer "max_num_students"
     t.date "birth_date"
     t.integer "role"
+    t.integer "hourly_rate_cents", default: 0, null: false
     t.float "ratings_average"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "orders", "users", column: "instructor_id"
+  add_foreign_key "orders", "users", column: "student_id"
   add_foreign_key "photos", "users"
   add_foreign_key "reviews", "users", column: "instructor_id"
   add_foreign_key "reviews", "users", column: "student_id"
