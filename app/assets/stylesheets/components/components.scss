@@ -127,6 +127,11 @@ a:hover {
   text-align: center;
 }
 
+@media(max-width: 1281px){
+  .blue-btn {
+  height: 45px;
+  }
+}
 
 .resort-card {
   display: flex;
@@ -143,4 +148,3 @@ a:hover {
 .resort-card:hover {
   box-shadow: 0px 0px 50px $shadow-color;
 }
-
