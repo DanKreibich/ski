@@ -11,16 +11,19 @@
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
-    <% if request.fullpath == "/" %>
       <!-- the navbar is rendered in file home.html.erb -->
+    <% if request.fullpath == "/" %>
+      <%= yield %>
     <% elsif request.fullpath.match('trips$') %>
       <%= render 'shared/navbar_booking' %>
+      <%= yield %>
     <% else %>
       <%= render 'shared/navbar_index' %>
+      <%= yield %>
     <% end %>
     <!-- This p tag with calss notice is creating a 15px gap between divs (do we need it?) -->
-    <p class="alert"><%= alert %></p>
-    <%= yield %>
+
+
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
     <%= render 'shared/footer' %>
