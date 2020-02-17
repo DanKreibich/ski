@@ -1,22 +1,25 @@
-<div class="instructor-body">
-  <div class="avatar-extra-large" style="background-image: url(<%= @instructor.avatar %>)"></div>
-  <p>You are about to book lessons with</p>
-  <h1><%= @instructor.first_name %> <%= @instructor.last_name %></h1>
-  <div class="summary-description">
-    <h3>Booking Summary</h3>
-    <br>
-    <p>Number of hours: <%= @sessions.length %></p>
-    <p>Price: <%= @sessions.length * @instructor.hourly_rate %> EUR</p>
-    <br>
-    
-    <!-- Instead of regular button, a form is needed to start the payment process -->
-    <%= form_tag orders_path do %>
-      <%= hidden_field_tag 'instructor_id', @instructor.id %>
-      <%= hidden_field_tag 'trip_id', @trip.id %>
-      <%= hidden_field_tag 'amount', @amount %>
-      <%= submit_tag 'Purchase', class: 'btn btn-primary' %>
-    <% end %>
-    
+<div class="checkout-body">
+
+  <div class="checkout-card">
+    <div class="background" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= @instructor.avatar %>)">
+    </div>
+
+    <div class="summary-description">
+      <h3>Booking Summary</h3>
+      <br>
+        <p><%= @instructor.first_name %> (<%= image_tag("rating.svg") %> <%= @instructor.ratings_average %>)</p>
+        <p><%= @sessions.length %> hours</p>
+        <p><%= @sessions.length * @instructor.hourly_rate %> EUR</p>
+      </ul>
+      <br>
+      <!-- Instead of regular button, a form is needed to start the payment process -->
+      <%= form_tag orders_path do %>
+        <%= hidden_field_tag 'instructor_id', @instructor.id %>
+        <%= hidden_field_tag 'trip_id', @trip.id %>
+        <%= hidden_field_tag 'amount', @amount %>
+        <%= submit_tag 'Proceed to payment', class: 'btn btn-primary' %>
+      <% end %>
+    </div>
   </div>
 </div>
 
