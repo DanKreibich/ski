@@ -10,6 +10,7 @@ class OrdersController < ApplicationController
       student: current_user,
       trip_id: params[:trip_id]
     )
+    # test
 
     session = Stripe::Checkout::Session.create(
       payment_method_types: ['card'],
