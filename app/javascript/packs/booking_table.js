@@ -3,7 +3,6 @@ bookingSlots.forEach(element => {
   element.addEventListener("click", () => {
     element.classList.toggle("selected");
     var checkbox = element.querySelector("input");
-    console.log(checkbox);
     checkbox.checked = !checkbox.checked;
   })
 });
@@ -39,16 +38,44 @@ const fullDayButtons = document.querySelectorAll("[data-type='select-day']");
 
 fullDayButtons.forEach(button => {
   button.addEventListener("click", () => {
-    button.classList.toggle("selected");
-    var dayNumber = button.dataset.dayNumber;
-    var divsForDay = document.querySelectorAll(`div[data-day-number='${dayNumber}']`);
-    divsForDay.forEach(div => {
+    const dayNumber = button.dataset.dayNumber;
+    const divsForDay = document.querySelectorAll(`div[data-day-number='${dayNumber}']`);
+    if (!button.classList.contains('btn-selected')) {
+      button.classList.toggle("btn-selected");
+      divsForDay.forEach(div => {
       if (!div.classList.contains('selected')){
-        div.click()
-      } else  {
-        // div.click()
+        div.click();
       }
     })
+    } else {
+      divsForDay.forEach(div => {
+        if (div.classList.contains('selected')){
+          div.click();
+          button.classList.remove("btn-selected");
+        }
+      })
+    }
+    // button.classList.toggle("btn-selected");
+    // divsForDay.forEach(div => {
+    //   if (!div.classList.contains('selected')){
+    //     div.click();
+    //   } else {
+    //   }
+    // })
   })
 });
 
+const btnTimeSlot = document.querySelectorAll('.selected');
+btnTimeSlot.forEach((button) => {
+
+    console.log(btnTimeSlot)
+    button.addEventListener("click", ()  => {
+      const dayOfWeek = event.currentTarget.dataset.dayNumber;
+      console.log("hi")
+      console.log(dayOfWeek)
+      const btnAllDay = document.querySelector(`div[data-day-number='${dayNumber}']`).querySelector('.btn-selected');
+      console.log("buy")
+      console.log(btnAllDay)
+      btnAllDay.classList.remove("btn-selected");
+    })
+})
