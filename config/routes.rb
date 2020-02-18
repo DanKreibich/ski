@@ -15,10 +15,10 @@ Rails.application.routes.draw do
   get ':user_id/trips', to: 'trips#new', as: :new_trip
 
   resources :users, only: [:index, :show] do
-    resources  :trips, only: [:create, :edit, :update]
+    resources  :trips, only: [:create]
   end
 
-  resources :orders, only: [:show, :create] do
+  resources :orders, only: [:show] do
     resources :payments, only: :new
   end
 
