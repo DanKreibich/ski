@@ -74,8 +74,10 @@
 }
 
 .booking-btn:hover{
-  color: $white;
-  box-shadow: 0px 0px 50px $shadow-color;
+  transition: 0.3s;
+  color: $blue !important;
+  background-color: $white !important;
+  border: 3px solid $blue !important;
 }
 
 @media(max-width: 1281px){
