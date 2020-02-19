@@ -27,7 +27,9 @@
       <% @instructors.each do |instructor| %>
         <div class="instructor-card" data-gender="<%= instructor.gender %>">
           <%= link_to user_path(instructor) do %>
-            <%= image_tag ("#{instructor.avatar}")%>
+            <div class="instructor-img-box">
+              <%= image_tag ("#{instructor.avatar}"), :class => "instructor-img"%>
+            </div>
             <div class="instructor-info">
               <div class="instructor-info-name">
                 <p class="name-and-price"><%= instructor.first_name %></p>
@@ -46,11 +48,3 @@
     </div>
   </div>
 <% end %>
-
-
-<%= javascript_pack_tag 'index_filter_gender' %>
-<%= javascript_pack_tag 'select_rating' %>
-<%= javascript_pack_tag 'autocomplete' %>
-<%= javascript_pack_tag 'datepicker' %>
-<%= javascript_pack_tag 'price_filter' %>
-

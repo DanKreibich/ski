@@ -1,8 +1,19 @@
 <div class="checkout-body">
+
   <div class="checkout-card">
-    <h1>Checkout summary</h1>
-    <p>Purchase of <strong><%= @order.instructor.first_name %></strong> for <strong><%= humanized_money_with_symbol @order.amount %></strong></p>
-    <button class='btn btn-primary' id="pay">Pay</button>
+    <div class="background" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= @order.instructor.avatar %>)">
+    </div>
+
+    <div class="summary-description">
+      <h3>Booking Summary</h3>
+      <br>
+        <p><%= @order.instructor.first_name %> (<%= image_tag("rating.svg") %> <%= @order.instructor.ratings_average %>)</p>
+        <p><%= @order.trip.sessions.length %> hours</p>
+        <p><%= @order.trip.sessions.length * @order.instructor.hourly_rate %> EUR</p>
+      </ul>
+      <br>
+      <!-- Instead of regular button, a form is needed to start the payment process -->
+      <button class='btn blue-btn' id="pay">Pay</button>
     <script src="https://js.stripe.com/v3/"></script>
     <script>
       const paymentButton = document.getElementById('pay');
@@ -13,5 +24,6 @@
         });
       });
     </script>
+    </div>
   </div>
-<div class="instructor-body">
+</div>

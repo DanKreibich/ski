@@ -33,30 +33,38 @@ class TripsController < ApplicationController
         session.save!
       end
 
-      redirect_to edit_user_trip_path(user_id: instructor_id, id: trip.id)
+      @instructor = User.find(params[:user_id])
+      @trip = trip
+      @sessions = Session.where(trip_id: @trip.id)
+      @amount = @sessions.length * @instructor.hourly_rate
+
+      # creating an order
+      order = Order.create!(
+        instructor: @instructor,
+        amount: @amount,
+        state: 'pending',
+        student: current_user,
+        trip_id: @trip.id
+      )
+      # creating a session for Stripe
+      session = Stripe::Checkout::Session.create(
+        payment_method_types: ['card'],
+        line_items: [{
+          name: "Your ski lessons with #{@instructor.first_name}",
+          amount: @amount.to_i * 100,
+          images: [@instructor.avatar],
+          currency: 'eur',
+          quantity: 1
+        }],
+        success_url: order_url(order),
+        cancel_url: order_url(order)
+      )
+      order.update(checkout_session_id: session.id)
+      redirect_to new_order_payment_path(order.id)
     else
       flash[:notice] = "Couldn't be saved as some slot had been booked by another user in the meantime. Please load page again."
       render :new
     end
-  end
-
-  def edit
-    @instructor = User.find(params[:user_id])
-    @trip = Trip.find(params[:id])
-    @sessions = Session.where(trip_id: @trip.id)
-    @amount = @sessions.length * @instructor.hourly_rate
-  end
-
-  def update
-    trip = Trip.find(params[:id])
-    trip.status = 1
-    trip.save
-    sessions = Session.where(trip_id: trip.id)
-    sessions.each do |session|
-      session.status = 1
-      session.save
-    end
-    redirect_to root_path
   end
 
   private

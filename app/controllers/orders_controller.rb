@@ -10,6 +10,7 @@ class OrdersController < ApplicationController
       student: current_user,
       trip_id: params[:trip_id]
     )
+    # test
 
     session = Stripe::Checkout::Session.create(
       payment_method_types: ['card'],
@@ -39,8 +40,17 @@ class OrdersController < ApplicationController
   end
 
   def show
-    # @order = current_user.orders.find(params[:id])
     @order = Order.find(params[:id])
+    # changes trip state if payment was successful
+    if @order.state == 'paid'
+      trip = @order.trip
+      trip.status = 1
+      trip.save
+      sessions = Session.where(trip_id: trip.id)
+      sessions.each do |session|
+        session.status = 1
+        session.save
+      end
+    end
   end
-
 end
