@@ -218,20 +218,22 @@ a:hover {
   align-items: center;
   flex-direction: column;
   box-shadow: 0px 0px 20px $shadow-color;
-  border-radius: 15px;
-  margin: 0 80px 80px 0;
+  border-radius: 10px;
+  margin: 0 30px 30px 0;
   height: 150px;
   width: 300px;
   background-size: cover;
-  background-size: center;
+  background-position: center;
+}
+.resort-card:nth-child(3n){
+  margin: 0 0 30px 0;
 }
 .resort-name {
   font-size: 25px;
   color: $white;
   margin: 0 auto;
+  text-shadow: 1px 1px 1px #000, 3px 3px 5px #787884;
 }
-
-
 
 .resort-card:hover {
   box-shadow: 0px 0px 50px $shadow-color;
@@ -271,3 +273,11 @@ a:hover {
 input, textarea{
   color: $blue;
 }
+
+@media(max-width: 1281px){
+  .resort-card{
+    border-radius: 5px;
+  }
+}
+
+
