@@ -86,7 +86,7 @@
       padding: auto 0px;
     }
   }
-}
+
   .instructor-name {
     font-size: 20px;
   }
@@ -94,6 +94,9 @@
     padding-top: 10px;
     font-size: 15px;
     margin: 0;
+  }
+  .rating {
+    font-size: 20px;
   }
   .instructor-rating {
     padding-top: 5px;
@@ -139,7 +142,7 @@
     font-size: 20px;
     margin: 0;
   }
-
+}
 .checkout-body{
   display: flex;
   flex-direction: column;
