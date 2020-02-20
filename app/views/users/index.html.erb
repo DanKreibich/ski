@@ -38,7 +38,7 @@
                 <p class="rating"><%= image_tag("rating.svg") %> <%= instructor.ratings_average %> </p>
               </div>
               <div class="instructor-info-price">
-                <p class="name-and-price"> €<%= instructor.hourly_rate %></p>
+                <p class="name-and-price"><%= (instructor.hourly_rate).to_i %> €</p>
                 <p class="resort-and-price">per hour</p>
               </div>
             </div>

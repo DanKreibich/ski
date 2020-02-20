@@ -86,7 +86,6 @@
   font-size: 100px;
   letter-spacing: 0;
   color: #FFFFFF;
-  text-transform: lowercase;
   padding-top: 50px;
 }
 .search-form-home-page {
@@ -117,7 +116,10 @@
     border: none;
   }
 }
-
+.resort-card-container {
+  display: flex;
+  width: 100%;
+}
 
 @media(max-width: 1281px){
   .home-h1 {
@@ -143,5 +145,13 @@
   }
   .search-form-padding{
     padding-top:25px;
+  }
+  .value-prop-title {
+    padding-top: 20px;
+    font-size: 57px;
+    margin-bottom: 100px;
+  }
+  .third-container {
+    height: 105vh;
   }
 }

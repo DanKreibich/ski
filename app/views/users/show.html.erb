@@ -4,7 +4,7 @@
       <div class="avatar-large" style="background-image: url(<%= @instructor.avatar %>)"></div>
       <div>
         <h1 class="instructor-name"><%= @instructor.first_name %> <%= @instructor.last_name %></h1>
-        <p class="price-hour"><%= @instructor.hourly_rate %> € per hour</p>
+        <p class="price-hour"><%= (@instructor.hourly_rate).to_i %> € per hour</p>
         <p class="instructor-rating"><%= image_tag "rating.svg", class: "rating-star" %> <%= @instructor.ratings_average %></p>
       </div>
     </div>
