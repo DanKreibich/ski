@@ -36,6 +36,21 @@ csv.each do |row|
 end
 
 
+csv_text = File.read(Rails.root.join('lib', 'seeds', 'seed_reviews.csv'))
+csv = CSV.parse(csv_text, :headers => true, :encoding => 'ISO-8859-1')
+csv.each do |row|
+  puts row.to_hash
+  r = Review.new
+  r.instructor_id = row['instructor_id']
+  r.student_id = row['student_id']
+  r.rating = row['rating']
+  r.description = row['description']
+  puts r.valid?
+  r.save
+  puts "#{r.instructor_id}, #{r.rating}, #{r.description} saved"
+end
+
+
 
 p = Photo.new
 p.url = 'seeds/2 - Carolin1.png'
