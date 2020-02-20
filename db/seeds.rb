@@ -29,6 +29,7 @@ csv.each do |row|
   u.hourly_rate_cents = row['hourly_rate_cents'].to_i
   u.email = row['email']
   u.password = row['password']
+  u.avatar = row['avatar']
   puts u.valid?
   u.save
   puts "#{u.first_name}, #{u.last_name} saved"
@@ -36,4 +37,12 @@ end
 
 puts "The end"
 
+
+p = Photo.new
+p.url = 'seeds/2 - Carolin1.png'
+p.user_id = 2
+puts p.valid?
+p.save
+
+puts "The second end"
 
