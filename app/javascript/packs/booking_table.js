@@ -42,12 +42,23 @@ const setBookingSlot = () => {
 
     fullDayButtons.forEach(button => {
       button.addEventListener("click", () => {
-        button.classList.toggle("selected");
-        var dayNumber = button.dataset.dayNumber;
-        var divsForDay = document.querySelectorAll(`div[data-day-number='${dayNumber}']`);
-        divsForDay.forEach(div => {
-          div.click();
-        })
+        const dayNumber = button.dataset.dayNumber;
+        const divsForDay = document.querySelectorAll(`div[data-day-number='${dayNumber}']`);
+        if (!button.classList.contains('btn-selected')) {
+          button.classList.toggle("btn-selected");
+          divsForDay.forEach(div => {
+            if (!div.classList.contains('selected')){
+              div.click();
+            }
+          })
+        } else {
+            divsForDay.forEach(div => {
+              if (div.classList.contains('selected')){
+                div.click();
+                button.classList.remove("btn-selected");
+              }
+            })
+          }
       })
     });
 

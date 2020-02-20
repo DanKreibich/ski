@@ -1,0 +1,15 @@
+<h1>you are here</h1>
+
+<%= simple_form_for @instructor do |f| %>
+  <%= f.input   :first_name, value: "#{@instructor.first_name}" %><br />
+  <%= f.input   :last_name,  value: "#{@instructor.last_name}" %> <br />
+  <%= f.input   :gender,     value: "#{@instructor.gender}" %>    <br />
+  <%= f.input   :description,value: "#{@instructor.description}" %><br />
+  <%= f.input   :resort,     value: "#{@instructor.resort}" %>    <br />
+  <%= f.input   :day_rate,   value: "#{@instructor.day_rate}" %>  <br />
+  <%= f.input   :avatar,     value: "#{@instructor.avatar}" %>    <br />
+  <%= f.input   :hourly_rate_cents,   value: "#{@instructor.hourly_rate_cents}" %>  <br />
+  <%= f.input   :ratings_average,     value: "#{@instructor.ratings_average}" %>    <br />
+
+  <%= f.button :submit %>
+<% end %>

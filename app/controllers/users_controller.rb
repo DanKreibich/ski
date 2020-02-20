@@ -19,6 +19,21 @@ class UsersController < ApplicationController
     set_ratings_average(@instructor)
   end
 
+  def edit
+    @instructor = User.find(params[:id])
+    @photos = Photo.where(user_id:params[:id])
+  end
+
+  def update
+    @instructor = User.find(params[:id])
+
+    if @instructor.update(instructor_params)
+      redirect_to @instructor
+    else
+      render :edit
+    end
+  end
+
   private
 
   def search
@@ -62,5 +77,9 @@ class UsersController < ApplicationController
   def change_date_format(date)
     to_date = date.to_date
     # new_format = to_date.strftime("%d-%m-%Y")
+  end
+
+  def instructor_params
+    params.require(:user).permit(:first_name, :last_name, :gender, :description, :resort, :day_rate, :avatar, :hourly_rate_cents, :ratings_average)
   end
 end
