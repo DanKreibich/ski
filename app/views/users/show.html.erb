@@ -1,7 +1,8 @@
 <div class="wrapper">
   <div class ="instructor-head"> <!-- continue with _show_instructor.scss-->
     <div class="name-block">
-      <div class="avatar-large" style="background-image: url(<%= @instructor.avatar %>)"></div>
+      <!-- <div class="avatar-large" style="background-image: url(<%= @instructor.avatar %>)"></div> -->
+      <%= image_tag "#{@instructor.avatar}", class: "avatar-large" %>
       <div>
         <h1 class="instructor-name"><%= @instructor.first_name %> <%= @instructor.last_name %></h1>
         <p class="price-hour"><%= (@instructor.hourly_rate).to_i %> € per hour</p>
