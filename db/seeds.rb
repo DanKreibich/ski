@@ -6,6 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
+require 'csv'
 
 puts 'deleting all users, trips, sessions, reviews, images...'
 Session.delete_all
@@ -14,103 +15,24 @@ Review.delete_all
 Photo.delete_all
 User.delete_all
 
-20.times do
-  instructor = User.new
-  instructor.first_name = Faker::Name.first_name
-  instructor.last_name = Faker::Name.last_name
-  instructor.email = Faker::Internet.email
-  instructor.password = 'VladIsBeautiful'
-  instructor.gender = Faker::Gender.binary_type
-  instructor.phone = Faker::PhoneNumber.cell_phone_with_country_code
-  instructor.description = Faker::Lorem.sentence(word_count: 50)
-  instructor.min_booking_hours = rand(1..4)
-  instructor.level = ["expert","professional"].shuffle.first
-  instructor.hourly_rate = rand(25..120)
-  instructor.day_rate = instructor.hourly_rate * 6
-  instructor.resort = ["St. Moritz, CH", "Lenzerheide, CH", "Sölden, AT", "Kitzbühel, AT"].shuffle.first
-  instructor.avatar = 'https://source.unsplash.com/1600x900/?portrait,winter'
-  instructor.max_num_students = rand(1..16)
-  instructor.birth_date = Faker::Date.birthday(min_age: 18, max_age: 65)
-  instructor.role = rand(0..1)
-  instructor.save!
-end
-puts 'Created 20 users.'
-
-trip = Trip.new
-trip.instructor_id = User.first.id
-trip.student_id = User.first.id + 1
-trip.num_students = 2
-trip.note = "Please be nice, Vlad. I need a good russian ski instructor"
-trip.created_at = "2020-01-01T04:05:06+00:00"
-trip.updated_at = "2020-01-01T04:05:06+00:00"
-trip.status = 1
-trip.save!
-puts "Created a Trip for student (User ID:#{User.first.id + 1}) booking instructor (User ID:#{User.first.id})"
-
-today = Date.today
-trip_id = Trip.first.id
-
-# Creating a day that is booked
-i = 9
-9.times do
-  session = Session.new
-  session.start = "#{today + 1} 0#{i}:00:00 UTC +00:00".to_datetime
-  session.end = "#{today + 1} #{i+1}:00:00 UTC +00:00".to_datetime
-  session.trip_id = trip_id
-  session.created_at = "2020-01-02T04:05:06+00:00"
-  session.updated_at = "2020-01-02T04:05:06+00:00"
-  session.status = 1
-  session.save!
-  i += 1
+csv_text = File.read(Rails.root.join('lib', 'seeds', 'seed_users.csv'))
+csv = CSV.parse(csv_text, :headers => true, :encoding => 'ISO-8859-1')
+csv.each do |row|
+  puts row.to_hash
+  u = User.new
+  u.first_name = row['first_name']
+  u.last_name = row['last_name']
+  u.description = row['description']
+  u.gender = row['gender']
+  u.resort = row['resort']
+  u.role = row['role']
+  u.resort = row['hourly_rate_cents']
+  u.resort = row['email']
+  u.resort = row['password']
+  u.save
+  puts "#{t.first_name}, #{t.last_name} saved"
 end
 
-
-session = Session.new
-session.start = "#{today + 2} 11:00:00 UTC +00:00".to_datetime
-session.end = "#{today + 2} 14:00:00 UTC +00:00".to_datetime
-session.trip_id = trip_id
-session.created_at = "2020-01-02T04:05:06+00:00"
-session.updated_at = "2020-01-02T04:05:06+00:00"
-session.status = 1
-session.save!
-
-session = Session.new
-session.start = "#{today + 3} 10:00:00 UTC +00:00".to_datetime
-session.end = "#{today + 3} 15:00:00 UTC +00:00".to_datetime
-session.trip_id = trip_id
-session.created_at = "2020-01-02T04:05:06+00:00"
-session.updated_at = "2020-01-02T04:05:06+00:00"
-session.status = 1
-session.save!
-puts "Created three sessions for Trip_id: #{trip_id}"
-
-# creating 3 reviews for the first 19 instructors
-user_id = User.first.id
-19.times do
-  3.times do
-    review = Review.new
-    review.instructor_id = user_id
-    review.student_id = user_id + 1
-    review.description = Faker::Lorem.sentence(word_count: 50)
-    review.rating = rand(1..5)
-    review.save!
-  end
-  user_id += 1
-end
-puts 'Created 3 review per instructor'
-
-user_id = User.first.id
-20.times do
-  i = rand(1..10)
-  i.times do
-    photo = Photo.new
-    photo.url = 'https://source.unsplash.com/1600x900/?ski'
-    photo.user_id = user_id
-    photo.save
-  end
-  user_id += 1
-end
-puts 'Created additional images for all users (not just instructors)'
-
+puts csv_text
 
 
