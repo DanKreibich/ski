@@ -25,14 +25,15 @@ csv.each do |row|
   u.description = row['description']
   u.gender = row['gender']
   u.resort = row['resort']
-  u.role = row['role']
-  u.resort = row['hourly_rate_cents']
-  u.resort = row['email']
-  u.resort = row['password']
+  u.role = row['role'].to_i
+  u.hourly_rate_cents = row['hourly_rate_cents'].to_i
+  u.email = row['email']
+  u.password = row['password']
+  puts u.valid?
   u.save
-  puts "#{t.first_name}, #{t.last_name} saved"
+  puts "#{u.first_name}, #{u.last_name} saved"
 end
 
-puts csv_text
+puts "The end"
 
 
