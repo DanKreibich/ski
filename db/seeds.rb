@@ -35,6 +35,8 @@ csv.each do |row|
   puts "#{u.first_name}, #{u.last_name} saved"
 end
 
+puts "Intructors upload complete"
+
 
 csv_text = File.read(Rails.root.join('lib', 'seeds', 'seed_reviews.csv'))
 csv = CSV.parse(csv_text, :headers => true, :encoding => 'ISO-8859-1')
@@ -50,7 +52,7 @@ csv.each do |row|
   puts "#{r.instructor_id}, #{r.rating}, #{r.description} saved"
 end
 
-
+puts "Reviews upload complete"
 
 p = Photo.new
 p.url = 'seeds/2 - Carolin1.png'
@@ -58,6 +60,54 @@ p.user_id = 2
 puts p.valid?
 p.save
 
-puts "The second end"
+p = Photo.new
+p.url = 'seeds/2 - Willena1.jpg'
+p.user_id = 2
+puts p.valid?
+p.save
+
+p = Photo.new
+p.url = 'seeds/2 - Willena2.jpg'
+p.user_id = 2
+puts p.valid?
+p.save
+
+p = Photo.new
+p.url = 'seeds/2 - Willena3.jpg'
+p.user_id = 2
+puts p.valid?
+p.save
+
+p = Photo.new
+p.url = 'seeds/2 - Willena4.jpg'
+p.user_id = 2
+puts p.valid?
+p.save
+
+p = Photo.new
+p.url = 'seeds/9 - Luigi1.jpg'
+p.user_id = 2
+puts p.valid?
+p.save
+
+p = Photo.new
+p.url = 'seeds/9 - Luigi2.jpg'
+p.user_id = 2
+puts p.valid?
+p.save
+
+p = Photo.new
+p.url = 'seeds/9 - Luigi3.jpg'
+p.user_id = 2
+puts p.valid?
+p.save
+
+p = Photo.new
+p.url = 'seeds/9 - Luigi4.jpg'
+p.user_id = 2
+puts p.valid?
+p.save
+
+puts "Photos upload complete"
 
 
