@@ -1,17 +1,17 @@
-id,first_name,last_name,description,gender,resort,role,hourly_rate_cents,email,password
+id,first_name,last_name,description,gender,resort,role,hourly_rate_cents,email,password,avatar
 1,Jeff,Scholl,"Skier, snowboarder traveller and photographer. 
 Passionate about the outdoor I like to discover new spots around the world, always in search of an adventure. 
 An expert freerider, I have worked for many years as a ski & snowboard coach, I give my best when it’s about technique.
-I enjoy sharing my passion for winter sports and the environment with all level skiers and snowboarders. My approach to the mountains is about discovering and experiencing something new everyday.",Male,Kitzbuehel,0,1500,jeff.scholl@skicoach.com,12345678
+I enjoy sharing my passion for winter sports and the environment with all level skiers and snowboarders. My approach to the mountains is about discovering and experiencing something new everyday.",Male,Kitzbuehel,0,1500,jeff.scholl@skicoach.com,12345678,1 - Jeff1.png
 2,Carolin,Martinez,"Hello, my name is Carolin and I grew up in Buenos Aires. I moved to Gstaad over 10 years ago to follow my love for skiing.
 I now teach skiing in different resorts in the Alps, but preferably in Gstaad where I currently live. 
 Skiing is like a song where you can choose the right rhythm. I am great with beginners looking to build their confidence up and I also specialize in freestyle.
-Let's enjoy!",Female,Gstaad,0,1800,carolin.martinez@skicoach.com,12345678
+Let's enjoy!",Female,Gstaad,0,1800,carolin.martinez@skicoach.com,12345678,2 - Carolin1.png
 3,Giorgio,Palatino,"Experienced and patient instructor with over 10 years experience;
-Dedicated to teaching skiing and snowboarding, I'm patient and will help you learn at your own pace, I was born in the Italian Alps and I've been skiing and competing from the age of 6.",Male,Ischgl,0,2000,giorgio.palatino@skicoach.com,12345678
+Dedicated to teaching skiing and snowboarding, I'm patient and will help you learn at your own pace, I was born in the Italian Alps and I've been skiing and competing from the age of 6.",Male,Ischgl,0,2000,giorgio.palatino@skicoach.com,12345678,3 - Giorgio1.png
 4,Willena,Gomez,"I am as passionate about skiing as I am about teaching. My skill set is diverse, I can take you anywhere in the resort
 My primary quality is my motivation; I love what I do and the mountains are my playground that I simply want to share with you!!
-From the complete beginner who has never seen snow before, to the expert who wants to get better and better, and the skier who would like to explore the snowpark and all the crazy things freestyle has to offer, the small freerider group that wants to ski every powdery run and the curious rider who wants to try the graceful telemark - all that is my world.",Female,Alpe D'Huez,0,1200,willena.gomez@skicoach.com,12345678
+From the complete beginner who has never seen snow before, to the expert who wants to get better and better, and the skier who would like to explore the snowpark and all the crazy things freestyle has to offer, the small freerider group that wants to ski every powdery run and the curious rider who wants to try the graceful telemark - all that is my world.",Female,Alpe D'Huez,0,1200,willena.gomez@skicoach.com,12345678,4 - Willena1.jpg
 5,John ,Backflipowski,"Don't delay, book today. Then let's play!
 
 There are 2 types of people in this world: 
@@ -19,29 +19,29 @@ There are 2 types of people in this world:
 - and the others nobody cares about
 
 My approach to skiing is simple: go big or go home. For those of you interested in extreme skiing, please contact me and let's rock it.
-",Male,Sankt Moritz,0,2500,john .backflipowski@skicoach.com,12345678
+",Male,Sankt Moritz,0,2500,john .backflipowski@skicoach.com,12345678,5 - John 1.png
 6,Mira,Katero,"I'm here to help you achieve real progress in skiing, whatever your level, through the development of awareness and anticipation reflexes, and with a stronger sense of contact between your feet and the snow. Instead of boring and confusing you with hideous exercises and technical jargon, I like to make use of our basic senses, natural biomechanics, and simple psychology to help free up your mind and allow you to ski beyond your expectations, all whilst feeling safe and having a lot of fun!!
 
-I love coaching all levels of skier from beginner to expert, and specialise in moguls, off-piste, free-ride, freestyle, and competition.",Female,Chamonix,0,2230,mira.katero@skicoach.com,12345678
-7,Rob,Melger,"I have taught skiing since 2002 and I have been teaching skiing in Courchevel, La Tania and Meribel since 2011. Along side running my own ski school in the 3 valleys called PDS academy, I also work as an examiner and trainer for the British Association of Snowsport Instructors (BASI). This appointed position sees me have the privilege of training and examining future ski instructors all over the world.",Male,Kitzbuehel,0,1730,rob.melger@skicoach.com,12345678
+I love coaching all levels of skier from beginner to expert, and specialise in moguls, off-piste, free-ride, freestyle, and competition.",Female,Chamonix,0,2230,mira.katero@skicoach.com,12345678,6 - Mira1.png
+7,Rob,Melger,"I have taught skiing since 2002 and I have been teaching skiing in Courchevel, La Tania and Meribel since 2011. Along side running my own ski school in the 3 valleys called PDS academy, I also work as an examiner and trainer for the British Association of Snowsport Instructors (BASI). This appointed position sees me have the privilege of training and examining future ski instructors all over the world.",Male,Kitzbuehel,0,1730,rob.melger@skicoach.com,12345678,7 - Rob1.png
 8,Ester,Ledecká,"I am a Czech snowboarder and alpine skier. At the 2018 Winter Olympics in Pyeongchang, I won gold medals in the super-G in alpine skiing, and in the parallel giant slalom in snowboarding, becoming the first person to win two gold medals at the same Winter Olympics using two different types of equipment (skis and snowboard). I was the second woman to win Olympic gold in two separate disciplines but the first to do so at the same Winter Olympics. 
 
 I can be your teacher as you pay me well and you can follow the pace!
 
-",Female,Gstaad,0,10000,ester.ledecká@skicoach.com,12345678
+",Female,Gstaad,0,10000,ester.ledecká@skicoach.com,12345678,8 - Ester1.jpg
 9,Luigi,Peroni,"I am a 31 years old fully qualified italian ski instructor with Italian Diploma and Carte professionelle. I grew up skiing in the Dolomites from the age of 10.
 
-French Alps are my office since 5 years. What I love the most here is to ride good powder off-piste and hit some jumps and rails at the the terrain park. Freestyle around with some flat tricks or good carving are between my favourites activities too.",Male,Chamonix,0,4400,luigi.peroni@skicoach.com,12345678
+French Alps are my office since 5 years. What I love the most here is to ride good powder off-piste and hit some jumps and rails at the the terrain park. Freestyle around with some flat tricks or good carving are between my favourites activities too.",Male,Chamonix,0,4400,luigi.peroni@skicoach.com,12345678,9 - Luigi1.jpg
 10,Samantha,Snow,"My three key words are: FUN, IMPROVING and SAFETY.
 
-I love to get people stoked with skiing through my strong passion for it. I think skiing means basically having FUN so this is the way I instruct all the different areas of skiing throughout the different levels (from very beginners to pro training) and ages. I do both group lessons and private ones. ",Female,Alpe D'Huez,0,5000,samantha.snow@skicoach.com,12345678
+I love to get people stoked with skiing through my strong passion for it. I think skiing means basically having FUN so this is the way I instruct all the different areas of skiing throughout the different levels (from very beginners to pro training) and ages. I do both group lessons and private ones. ",Female,Alpe D'Huez,0,5000,samantha.snow@skicoach.com,12345678,10 - Samantha1.jpeg
 11,Gareth,Jefferson,"My passion for skiing came from a very young age. I've merged my passion with one to teach and to listen, help, inspire and share.
 
-I strive to enhance your strengths and abilities and also to bring you new knowledge in Sankt Moritz, capable of catering all needs and expectations, from novices to steep and deep skiers.",Male,Sankt Moritz,0,2300,gareth.jefferson@skicoach.com,12345678
+I strive to enhance your strengths and abilities and also to bring you new knowledge in Sankt Moritz, capable of catering all needs and expectations, from novices to steep and deep skiers.",Male,Sankt Moritz,0,2300,gareth.jefferson@skicoach.com,12345678,11 - Gareth1.png
 12,Robert,Johnson,"I love teaching skiing to any age and any level of skier, from day 1 beginner to trainee ski instructors. My teaching philosophy is client centred teaching. Being client centred means I put your needs and goals at the centre of every lesson or experience you have with me.
 
 My ultimate goal is to share my enthusiasm and love of skiing, passing on my knowledge and experience gained over the years to cultivate your own enjoyment of skiing.
-",Male,Ischgl,0,700,robert.johnson@skicoach.com,12345678
+",Male,Ischgl,0,700,robert.johnson@skicoach.com,12345678,12 - Robert1.png
 13,Eilidh,Kilgra,"Eilidh grew up skiing in Cairngorm, Scotland. She trained and raced from an early age, where her talents were quickly spotted. She competed for the Scottish Ski Team and left school to go full-time with the British Development Team. At 16 years of age Eilidh became the overall British U18 champion and represented GB at the Youth Olympics.
 
 Eilidh studied Geography at Aberdeen University, where she won the British Universities’ Championships for consecutive years and was invited to be part of the British University Team in the famous Anglo-Suisse race in St Moritz.
@@ -54,26 +54,26 @@ Kandahar Ski Race Coach
 EMS Level 4 (European Mountain Security)
 UKCP Alpine Coach Level 2 (UK Coaching Pathway)
 Race Trainer for British Army Ski Teams
-Telemark Instructor",Female,Sankt Moritz,0,900,eilidh.kilgra@skicoach.com,12345678
+Telemark Instructor",Female,Sankt Moritz,0,900,eilidh.kilgra@skicoach.com,12345678,13 - Eilidh1.jpg
 14,Claire,Maitre,"Born in the Alps with a great knowledge of the 3 Valleys, my first quality is knowing how to adapt me to each levels and goals to help you to progress safely and enjoy in the best conditions the large ski area near Alpe D'Huez.
 I have practiced ski racing during more than 10 years before moving on to freeride skiing. I have been a skiing Iinstructor for more than 15 years at the historical ESF (French Ski School), I introduce, improve and share my love of those sports to a lot of different people, from children to adults, beginners to experts, and in group and private lessons.
-My purpose: offering you customized services and a high quality training, making you discover or rediscover our slopes, our backcountry powder and of course making you appreciate our beautiful mountains for a pleasant stay in the Alps.",Female,Alpe D'Huez,0,2000,claire.maitre@skicoach.com,12345678
+My purpose: offering you customized services and a high quality training, making you discover or rediscover our slopes, our backcountry powder and of course making you appreciate our beautiful mountains for a pleasant stay in the Alps.",Female,Alpe D'Huez,0,2000,claire.maitre@skicoach.com,12345678,14 - Claire1.jpg
 15,Claude,Dupont,"I am Claude, your very own private ski instructor, fully qualified French ski teacher, qualified Canadian ski instructor (CSIA level 3). I'm an ex ski racer, member of the French free style skiing team (specialized in moguls, bumps), French vice-champion, ex coach of the Megeve artistic and acrobatic ski team.
 My teaching is based on simplicity, correct movement and balance. To be confident, we must be balanced.
-Whatever your goal I will provide you with all the tips you need to improve at your own pace. All levels of skiers can benefit from the years of experience as a racer, a coach and a teacher of one of the most highly skilled and professional instructor in Courchevel, Meribel, Val Thorens (the 3 Valleys Area).",Male,Chamonix,0,3000,claude.dupont@skicoach.com,12345678
+Whatever your goal I will provide you with all the tips you need to improve at your own pace. All levels of skiers can benefit from the years of experience as a racer, a coach and a teacher of one of the most highly skilled and professional instructor in Courchevel, Meribel, Val Thorens (the 3 Valleys Area).",Male,Chamonix,0,3000,claude.dupont@skicoach.com,12345678,15 - Claude1.png
 16,Kristina,Sühl,"I started Alpine Skiing and water ski at 3 years old they are mines hobbies I'm a competitor in the soul.
 I have been teaching skiing for 35 years in several ski resorts in France, Switzerland and Austria.
 
 I like to start the day training before the lesson usually at the top of the slopes with the view of the mountains.
 I'm listening to customers, desires, depending on the level, overcome the fear...
-The competition helped me better transmit the pedagogy.",Female,Gstaad,0,2300,kristina.sühl@skicoach.com,12345678
+The competition helped me better transmit the pedagogy.",Female,Gstaad,0,2300,kristina.sühl@skicoach.com,12345678,16 - Kristina1.jpeg
 17,Guillermo,Felix,"Providing private ski coaching and instruction for individuals or groups, from one of the highest qualified ski instructors in the world.
 Instruction and Coaching at all levels, from beginner to athlete.
 If you have specific goals or if you just want to have fun - I guarantee your skiing will improve.
 I offer lessons for clients who are just beginning their skiing journey, or able to provide coaching for: Boosting Confidence, Improving Performance and Technique, Freestyle, Off-Piste / Backcountry - for clients of all ages.
-Also able to offer adaptive services (special needs or physical difficulties) - get in touch to discuss.",Male,Ischgl,0,1500,guillermo.felix@skicoach.com,12345678
+Also able to offer adaptive services (special needs or physical difficulties) - get in touch to discuss.",Male,Ischgl,0,1500,guillermo.felix@skicoach.com,12345678,17 - Guillermo1.jpg
 18,Camille,Pratel,"I'm a passionate ski instructor based in Val d'Isère. Manager of a ski school, I love skiing and teaching. I customize my lessons to your needs and always want to make your holiday as enjoyable as possible. The time and place of the lesson is adapted to what suits you. I work to your preferences, on piste I can cater to your needs. I love helping customers to improve and discover the incredible range of the Espace Killy. I look forward to skiing with you !
-",Female,Chamonix,0,1700,camille.pratel@skicoach.com,12345678
+",Female,Chamonix,0,1700,camille.pratel@skicoach.com,12345678,18 - Camille1.png
 19,Pietro,Montebello,"Do want to learn skiing from scratch or refresh your memories?
 Do you want to recover from physical traumas or simply be guided to discover the resort with few tips on the way?
 Half or a full day?
@@ -84,7 +84,7 @@ You will live and explore the mountains !
 We will plan the day ahead together to make a perfect adventure.
 I will calibrate the teaching to make your day !
 Ski instructor fully qualified in Italy (Diploma di Maestro di Sci) and France (Moniteur National de Ski Alpin - Brevet d'État d'Éducateur Sportif).
-",Male,Kitzbuehel,0,2200,pietro.montebello@skicoach.com,12345678
+",Male,Kitzbuehel,0,2200,pietro.montebello@skicoach.com,12345678,19 - Pietro1.jpg
 20,Monique,Thérèz,"I have a good experience as a ski instructor for all levels, from beginner to advanced.
 The most important is to have fun while learning in a fun way. My goal is to adapt to each of you to have a good time. 
-My little extra is to film you to make a short video montage of your progress.",Female,Gstaad,0,1700,monique.thérèz@skicoach.com,12345678
+My little extra is to film you to make a short video montage of your progress.",Female,Gstaad,0,1700,monique.thérèz@skicoach.com,12345678,20 - Monique1.jpeg
