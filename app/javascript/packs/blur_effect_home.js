@@ -5,9 +5,11 @@ const initBlur = () => {
   if (blurElement) {
     const setBlur = function() {
       blurElement.style.filter = "blur(4px)";
+      blurElement.style.transition = "1s";
     };
     const unsetBlur = function() {
       blurElement.style.filter = "blur(0px)";
+      blurElement.style.transition = "1s";
     };
 
     input[0].onfocus = function() {
