@@ -35,7 +35,6 @@ csv.each do |row|
   puts "#{u.first_name}, #{u.last_name} saved"
 end
 
-puts "The end"
 
 
 p = Photo.new
