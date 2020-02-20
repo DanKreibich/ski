@@ -23,7 +23,7 @@
   <h1 class="blue-font font-size">Photos</h1>
   <div class="photo-area">
     <% @photos.each do |photo| %>
-      <%= image_tag ("#{photo.url}") %>
+      <%= image_tag "#{photo.url}" %>
     <% end %>
   </div>
 
