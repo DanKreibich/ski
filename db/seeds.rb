@@ -44,9 +44,9 @@ csv.each do |row|
   r.instructor_id = row['instructor_id']
   r.rating = row['rating']
   r.description = row['description']
-  puts u.valid?
-  u.save
-  puts "#{u.first_name}, #{u.last_name} saved"
+  puts r.valid?
+  r.save
+  puts "#{r.instructor_id}, #{r.rating}, #{r.description} saved"
 end
 
 
