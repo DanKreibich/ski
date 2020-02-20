@@ -14,7 +14,7 @@ Rails.application.routes.draw do
 
   get ':user_id/trips', to: 'trips#new', as: :new_trip
 
-  resources :users, only: [:index, :show] do
+  resources :users, only: [:index, :show, :edit, :update] do
     resources  :trips, only: [:create]
   end
 
