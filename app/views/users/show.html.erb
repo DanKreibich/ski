@@ -5,7 +5,7 @@
       <div>
         <h1 class="instructor-name"><%= @instructor.first_name %> <%= @instructor.last_name %></h1>
         <p class="price-hour"><%= (@instructor.hourly_rate).to_i %> € per hour</p>
-        <p class="instructor-rating"><%= image_tag "rating.svg", class: "rating-star" %>   <%= @instructor.ratings_average %></p>
+        <p class="instructor-rating"><%= image_tag "rating.svg", class: "rating-star" %><%= @instructor.ratings_average %></p>
       </div>
     </div>
     <%= link_to "Book a lesson", new_trip_path(@instructor), method: :get, class: "booking-btn" %>

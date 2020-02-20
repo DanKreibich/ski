@@ -44,7 +44,6 @@
 .multiply-price-block {
   display: flex;
   font-size: 30px;
-  margin: 0;
   margin-top: -15px;
 }
 .booking-table-wrapper {
@@ -181,6 +180,10 @@
   display: none;
 }
 
+.multiply {
+    margin: 0px 5px;
+}
+
 @media(max-width: 1281px){
   .user-booking-info {
     width: 60%;
@@ -203,7 +206,12 @@
     p {
       margin: 0;
     }
+    .multiply {
+      margin: 0px 5px;
+    }
   }
+
+
   .booking-instructor-photo{
     height: 60px;
     width: 60px;
