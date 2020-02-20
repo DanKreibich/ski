@@ -42,9 +42,25 @@
   margin: auto;
   padding-top: 72px;
 }
+.container-font-size {
+  p {
+    font-size: 20px;
+    margin-top: -10px;
+  }
+}
+.font-size {
+  font-size: 30px;
+}
+.instructor-description-header {
+  font-size: 30px;
+  text-align: center;
+}
 .instructor-description{
   padding-top: 48px;
   padding-bottom: 80px;
+  p {
+    font-size: 20px;
+  }
 }
 .review-container{
   display: flex;
@@ -126,7 +142,9 @@
   .instructor-description {
     padding-top: 30px;
     padding-bottom: 40px;
-    font-size: 15px;
+    p {
+      font-size: 18px;
+    }
   }
   .photo-area{
     margin-top: 30px;
@@ -142,7 +160,7 @@
     }
   }
   .font-size{
-    font-size: 20px;
+    font-size: 30px;
     margin: 0;
   }
 }

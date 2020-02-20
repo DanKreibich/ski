@@ -36,16 +36,16 @@ User.delete_all
 end
 puts 'Created 20 users.'
 
-trip = Trip.new
-trip.instructor_id = User.first.id
-trip.student_id = User.first.id + 1
-trip.num_students = 2
-trip.note = "Please be nice, Vlad. I need a good russian ski instructor"
-trip.created_at = "2020-01-01T04:05:06+00:00"
-trip.updated_at = "2020-01-01T04:05:06+00:00"
-trip.status = 1
-trip.save!
-puts "Created a Trip for student (User ID:#{User.first.id + 1}) booking instructor (User ID:#{User.first.id})"
+# trip = Trip.new
+# trip.instructor_id = User.first.id
+# trip.student_id = User.first.id + 1
+# trip.num_students = 2
+# trip.note = "Please be nice, Vlad. I need a good russian ski instructor"
+# trip.created_at = "2020-01-01T04:05:06+00:00"
+# trip.updated_at = "2020-01-01T04:05:06+00:00"
+# trip.status = 1
+# trip.save!
+# puts "Created a Trip for student (User ID:#{User.first.id + 1}) booking instructor (User ID:#{User.first.id})"
 
 today = Date.today
 trip_id = Trip.first.id
