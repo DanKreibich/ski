@@ -9,7 +9,6 @@
   background-size: cover;
   background-position: center;
   position: absolute;
-  transition: 1s;
 }
 .first-container {
   width: 100%;
@@ -53,7 +52,7 @@
 .value-prop-container {
   width: 70%;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   flex-wrap: wrap;
   .child {
   flex-basis: 33%;
@@ -119,6 +118,7 @@
 .resort-card-container {
   display: flex;
   width: 100%;
+  justify-content: center;
 }
 
 @media(max-width: 1281px){
