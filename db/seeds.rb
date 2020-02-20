@@ -42,6 +42,7 @@ csv.each do |row|
   puts row.to_hash
   r = Review.new
   r.instructor_id = row['instructor_id']
+  r.student_id = row['student_id']
   r.rating = row['rating']
   r.description = row['description']
   puts r.valid?
