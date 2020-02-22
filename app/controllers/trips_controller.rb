@@ -54,6 +54,7 @@ class TripsController < ApplicationController
           amount: @amount.to_i * 100,
           currency: 'eur',
           quantity: 1,
+          images: ["https://images.unsplash.com/photo-1491555103944-7c647fd857e6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80"]
         }],
         success_url: order_url(order),
         cancel_url: order_url(order)
