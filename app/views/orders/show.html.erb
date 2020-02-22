@@ -1,12 +1,12 @@
 <div class="home-background">
   <div class="checkout-body">
     <div class="checkout-card">
-      <h1 class="blue-font">Order confirmation #<%= @order.id %></h1>
-      <p> <span>(Payment status: <%= @order.state %>)</span></p>
+      <h1 class="blue-font">Your lesson is booked ✅</h1>
       <ul class="list-unstyled">
-        <li><strong>Booked on</strong> <%= @order.created_at.to_date %></li>
-        <li><strong>Instructor</strong> <%= @order.instructor.first_name %> <%= @order.instructor.last_name %></li>
-        <li><strong>Amount paid</strong> <%= humanized_money_with_symbol @order.amount %></li>
+        <li><strong>Status:</strong> <%= @order.state %></li>
+        <li><strong>Booked on:</strong> <%= @order.created_at.to_date %></li>
+        <li><strong>Instructor:</strong> <%= @order.instructor.first_name %> <%= @order.instructor.last_name %></li>
+        <li><strong>Amount paid:</strong> <%= humanized_money_with_symbol @order.amount %></li>
         </li>
       </ul>
     </div>
