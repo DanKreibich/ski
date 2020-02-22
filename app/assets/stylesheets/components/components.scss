@@ -263,6 +263,15 @@ a:hover {
     align-items: flex-end;
     justify-content: center;
   }
+
+  &.checkout-card--payment {
+    height: auto;
+    width: 30rem;
+
+    img {
+      object-fit: cover;
+    }
+  }
 }
 .checkout-background{
   background-image: url('https://source.unsplash.com/1600x900/?portrait,winter');
