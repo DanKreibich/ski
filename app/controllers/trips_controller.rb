@@ -50,11 +50,10 @@ class TripsController < ApplicationController
       session = Stripe::Checkout::Session.create(
         payment_method_types: ['card'],
         line_items: [{
-          name: "Your ski lessons with #{@instructor.first_name}",
+          name: "Your ski trip with #{@instructor.first_name}",
           amount: @amount.to_i * 100,
-          images: [@instructor.avatar],
           currency: 'eur',
-          quantity: 1
+          quantity: 1,
         }],
         success_url: order_url(order),
         cancel_url: order_url(order)
